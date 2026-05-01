@@ -3,22 +3,22 @@ import { motion } from 'motion/react';
 
 const pains = [
   {
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400",
+    image: "https://i.postimg.cc/Xv1QVFBd/66aef0a9-bd32-4d93-9d5a-caa64cab06dd.png",
     title: "Chuột Rút Bất Ngờ",
     desc: "Cơn co thắt đau đớn xuất hiện đột ngột giữa set đấu quan trọng, làm gián đoạn nhịp thi đấu và tâm lý."
   },
   {
-    image: "https://images.unsplash.com/photo-1554344047-975dc5eb2d21?auto=format&fit=crop&q=80&w=400",
+    image: "https://i.postimg.cc/rmQJh4M2/Chat-GPT-Image-00-10-58-2-thg-5-2026.png",
     title: "Căng Cơ, Đau Khớp",
     desc: "Áp lực lên cổ tay, đầu gối và gót chân liên tục. Những chấn thương tiềm ẩn ngăn cản bạn vung vợt mãnh liệt."
   },
   {
-    image: "https://images.unsplash.com/photo-1522855169420-1a773bc2a3a5?auto=format&fit=crop&q=80&w=400",
+    image: "https://i.postimg.cc/FH5jVp3y/Chat-GPT-Image-00-13-15-2-thg-5-2026.png",
     title: "Kiệt sức, chậm phục hồi",
     desc: "Phong độ sụt giảm nhanh chóng sau các set đấu, cơ thể nặng nề, sức bền giảm sút, toàn thân rã rời mệt mỏi kéo dài sang cả ngày hôm sau."
   },
   {
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ad?auto=format&fit=crop&q=80&w=400",
+    image: "https://i.postimg.cc/HxR2DgcS/Chat-GPT-Image-00-16-50-2-thg-5-2026.png",
     title: "Sợ dùng thuốc Tây",
     desc: "Nhọc nhằn tìm cách hồi phục nhưng không muốn dùng thuốc giảm đau, e ngại tác dụng phụ ảnh hưởng sức khỏe lâu dài."
   }
@@ -67,11 +67,13 @@ export default function PainPoints() {
               transition={{ delay: index * 0.1 + 0.3 }}
               className="bg-white p-6 rounded-[2rem] border border-beige hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <img 
-                src={pain.image} 
-                alt={pain.title} 
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover mb-6 shadow-sm"
-              />
+              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-sm bg-gray-100">
+                <img 
+                  src={pain.image} 
+                  alt={pain.title} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <h3 className="text-xl font-heading font-bold text-text-dark mb-3">{pain.title}</h3>
               <p className="text-text-body leading-relaxed text-justify">
                 {pain.desc}
