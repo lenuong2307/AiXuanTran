@@ -20,7 +20,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/aixuan.tran.79?locale=vi_VN" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80 font-semibold">
+              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80 font-semibold">
                 <span className="text-[11px]">Zalo</span>
               </a>
               {/* Note: Insert Tiktok icon from external source if needed, or use simple a tag */}
