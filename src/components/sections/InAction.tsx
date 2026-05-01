@@ -4,10 +4,10 @@ import { Trophy } from 'lucide-react';
 
 const logos = [
   "Giải Vô Địch Pickleball Mở Rộng 2023",
-  "Cúp Quần Vợt Trẻ Toàn Quốc",
-  "Vietnam Pickleball Championship",
-  "Giải Vô Địch Các CLB Pickleball",
-  "Saigon Pickleball Open"
+  "Giải pickleball CLB BFF tại tuy Phước",
+  "Giải AN THÁI TRIỆU tại An Nhơn",
+  "Giải Pickleball Dinknutrition Open TPHCM",
+  "Giải pickleball resort dankbaar"
 ];
 
 const actions = [

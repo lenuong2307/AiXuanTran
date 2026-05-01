@@ -17,11 +17,11 @@ export default function Footer() {
               Sẵn sàng trở lại sân đấu với thể trạng 100%. Kết nối tinh hoa y học truyền thống và thể thao hiện đại.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80">
+              <a href="https://www.facebook.com/aixuan.tran.79?locale=vi_VN" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80">
-                <Instagram className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80 font-semibold">
+                <span className="text-[11px]">Zalo</span>
               </a>
               {/* Note: Insert Tiktok icon from external source if needed, or use simple a tag */}
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80 font-bold border border-current">
@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-lg">Thông Tin</h4>
             <ul className="space-y-3">
-              {['Về chuyên gia', 'Phương pháp trị liệu', 'Khách hàng nói gì', 'Câu hỏi thường gặp'].map((item, i) => (
+              {['Về Ái Xuân Trần', 'Phương pháp phục hồi', 'Khách hàng nói gì', 'Câu hỏi thường gặp'].map((item, i) => (
                 <li key={i}>
                   <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
                     {item}
@@ -64,15 +64,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-sage shrink-0 mt-0.5" />
-                <span className="text-white/70 text-sm">0909 123 456 (Zalo Call)</span>
+                <span className="text-white/70 text-sm">0938614687</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-sage shrink-0 mt-0.5" />
-                <span className="text-white/70 text-sm">contact@aixuantran.com</span>
+                <span className="text-white/70 text-sm">Xuantocxu86@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-sage shrink-0 mt-0.5" />
-                <span className="text-white/70 text-sm">123 Đường Pickleball, Quận 1, TP. Hồ Chí Minh</span>
+                <span className="text-white/70 text-sm">63 Đường Phạm Ngọc Thạch, Thành phố Quy Nhơn, Tỉnh Gia Lai</span>
               </li>
             </ul>
           </div>
