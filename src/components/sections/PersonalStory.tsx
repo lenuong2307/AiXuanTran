@@ -10,15 +10,15 @@ export default function PersonalStory() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sage/10 rounded-full blur-[100px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:items-stretch items-center">
           
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative w-full h-full min-h-[400px]"
           >
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-2xl border-4 border-white">
+            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-auto lg:absolute lg:inset-0 shadow-2xl border-4 border-white">
               <img 
                 src="https://i.postimg.cc/wvC6gjm4/Logo-A-i-Xua-n-Tra-n.png" 
                 alt="Ái Xuân Trần" 
@@ -43,8 +43,8 @@ export default function PersonalStory() {
               <span>Câu chuyện của tôi</span>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-text-dark mb-6 leading-tight">
-              HƠN CẢ MỘT CHUYÊN GIA, TÔI LÀ NGƯỜI ĐỒNG HÀNH CÙNG ĐAM MÊ CỦA BẠN
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-text-dark mb-4 leading-tight">
+              HƠN CẢ MỘT CHUYÊN GIA, <br/>TÔI LÀ NGƯỜI ĐỒNG HÀNH CÙNG ĐAM MÊ CỦA BẠN
             </h2>
             
             <div className="space-y-2 sm:space-y-3 text-base sm:text-lg text-text-body text-justify">
