@@ -24,7 +24,7 @@ export default function Hero() {
               <span className="leading-snug">Chăm sóc sức khỏe vận động viên Pickleball bằng Đông y</span>
             </div>
             
-            <h1 className="text-[28px] min-[375px]:text-[34px] sm:text-5xl lg:text-6xl font-bold font-heading text-text-dark leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-[28px] min-[375px]:text-[34px] sm:text-5xl lg:text-6xl font-bold font-heading text-text-dark leading-[1.25] mb-6 tracking-tight">
               ÁI XUÂN TRẦN <br/>
               <span className="text-gradient whitespace-nowrap text-[6vw] min-[375px]:text-[28px] min-[400px]:text-[30px] sm:text-5xl lg:text-6xl">"Chuyên gia Bắt chuột"</span> <br/>
               & Phục Hồi Thể Lực
@@ -82,9 +82,9 @@ export default function Hero() {
             {/* Main Action Image */}
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-square lg:aspect-[4/5] shadow-2xl bg-white flex items-center justify-center p-8">
               <img 
-                src="https://i.postimg.cc/wvC6gjm4/Logo-A-i-Xua-n-Tra-n.png" 
+                src="https://i.postimg.cc/3NDjrvjv/z7781676558847-a23e3c4195086002e396e93703e2449b.jpg" 
                 alt="Chuyên gia xoa bóp bấm huyệt thể thao" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover rounded-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent pointer-events-none"></div>
               
