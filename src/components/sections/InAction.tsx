@@ -7,7 +7,10 @@ const logos = [
   "Giải pickleball CLB BFF tại tuy Phước",
   "Giải AN THÁI TRIỆU tại An Nhơn",
   "Giải Pickleball Dinknutrition Open TPHCM",
-  "Giải pickleball resort dankbaar"
+  "Giải pickleball resort dankbaar",
+  "Giải LÌ H2PHONE tại An Nhơn",
+  "Giải pickleball Khánh Quỳnh pleicu Gia lai",
+  "Giải CLB BFF LẦN THỨ 2"
 ];
 
 const actions = [
