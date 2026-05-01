@@ -16,20 +16,21 @@ export default function PersonalStory() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative w-full h-full min-h-[400px]"
+            className="flex flex-col h-full lg:pt-[64px] lg:pb-[96px] relative"
           >
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-auto lg:absolute lg:inset-0 shadow-2xl border-4 border-white">
+            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-auto lg:flex-1 shadow-2xl border-4 border-white">
               <img 
                 src="https://i.postimg.cc/wvC6gjm4/Logo-A-i-Xua-n-Tra-n.png" 
                 alt="Ái Xuân Trần" 
-                className="w-full h-full object-cover bg-cream p-4"
+                className="w-full h-full object-cover lg:absolute lg:inset-0 bg-cream p-4"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent"></div>
-            </div>
-            {/* Signature or Quote */}
-            <div className="absolute -bottom-6 -right-2 sm:-right-6 lg:-right-12 bg-white p-4 sm:p-6 rounded-2xl shadow-xl w-64 sm:w-auto max-w-xs rotate-2 z-10">
-              <p className="font-script text-2xl text-coral mb-2">"Sức khoẻ là tài sản quý giá nhất"</p>
-              <p className="text-sm text-text-body font-medium">- Ái Xuân Trần</p>
+              
+              {/* Signature or Quote */}
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-xl w-64 sm:w-auto max-w-xs rotate-2 z-10">
+                <p className="font-script text-xl sm:text-2xl text-coral mb-1 sm:mb-2">"Sức khoẻ là tài sản quý giá nhất"</p>
+                <p className="text-sm text-text-body font-medium">- Ái Xuân Trần</p>
+              </div>
             </div>
           </motion.div>
 
@@ -43,7 +44,7 @@ export default function PersonalStory() {
               <span>Câu chuyện của tôi</span>
             </div>
             
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-text-dark mb-4 leading-tight">
+            <h2 className="text-xl sm:text-2xl lg:text-[22px] xl:text-[28px] font-heading font-bold text-text-dark mb-4 leading-tight">
               HƠN CẢ MỘT CHUYÊN GIA, <br/>TÔI LÀ NGƯỜI ĐỒNG HÀNH CÙNG ĐAM MÊ CỦA BẠN
             </h2>
             
