@@ -43,19 +43,28 @@ export default function PersonalStory() {
               <span>Câu chuyện của tôi</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-dark mb-6 leading-tight">
-              Lấy năng lượng chữa lành <br/> làm kim chỉ nam.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-text-dark mb-6 leading-tight">
+              HƠN CẢ MỘT CHUYÊN GIA, TÔI LÀ NGƯỜI ĐỒNG HÀNH CÙNG ĐAM MÊ CỦA BẠN
             </h2>
             
-            <div className="space-y-6 text-lg text-text-body">
+            <div className="space-y-2 sm:space-y-3 text-base sm:text-lg text-text-body text-justify">
               <p>
-                Xin chào, tôi là <strong className="text-forest">Ái Xuân Trần</strong>. Được dẫn dắt bởi ngọn lửa đam mê và sự am hiểu sâu sắc về y lý phương Đông, tôi chọn con đường đồng hành cùng các vận động viên Pickleball.
+                Xin chào, tôi là <strong className="text-forest">Ái Xuân Trần</strong>. Nhưng trên sân, mọi người thường gọi vui tôi là <strong>'Chuyên gia bắt chuột'</strong>.
               </p>
               <p>
-                Tôi mang trong mình mệnh Hỏa – ngọn lửa của sự ấm áp, chuyển hóa và chữa lành. Tôi tin rằng mỗi người chơi thể thao không chỉ cần một cơ bắp dẻo dai mà còn cần một hệ thống kinh lạc lưu thông trơn tru. 
+                Tôi không chỉ là một người làm nghề chăm sóc sức khỏe, mà trước hết, tôi là một người mang trong mình tình yêu mãnh liệt với bộ môn Pickleball. Chính vì trực tiếp cầm vợt, trực tiếp vã mồ hôi và cháy hết mình trên sân, tôi thấu hiểu tận cùng cảm giác hụt hẫng khi một pha bóng đẹp bị cắt ngang bởi cơn chuột rút. Tôi hiểu sự bất lực khi cơ bắp căng cứng, khớp gối đau nhức khiến bạn phải ngồi ngoài nhìn đồng đội thi đấu.
               </p>
               <p>
-                Sự kết hợp giữa <strong>Đông y dưỡng sinh</strong> và <strong>thể thao phục hồi</strong> không chỉ giúp bạn cắt đứt cơn đau do chuột rút, căng cơ ngay tại sân, mà còn tái tạo năng lượng từ sâu bên trong. Hãy để tôi dùng chuyên môn và tâm huyết bảo vệ nền tảng thể lực, giúp bạn luôn thăng hoa trong từng pha bóng.
+                Nỗi sợ chấn thương, sợ phải dùng thuốc giảm đau hay sợ phải nghỉ chơi dài ngày là nỗi ám ảnh của bất kỳ tay vợt nào.
+              </p>
+              <p>
+                Sự đồng cảm đó đã thôi thúc tôi – một người được đào tạo bài bản về <strong className="text-forest">Dưỡng sinh Đông y</strong> – quyết tâm tìm ra một giải pháp phục hồi tối ưu nhất cho dân thể thao. Tôi đã kiên trì tìm hiểu, ứng dụng thực tế và kết hợp thành công tinh hoa <strong>Y học Cổ truyền</strong> và <strong>Kỹ thuật giãn cơ hiện đại</strong>.
+              </p>
+              <p>
+                Phương pháp này không chỉ giúp bạn giảm cơn đau ngay tại mép sân, mà còn giải phóng các bó cơ bó tắc, lưu thông khí huyết, giúp cơ thể tự phục hồi năng lượng một cách tự nhiên nhất.
+              </p>
+              <p>
+                Sứ mệnh của tôi rất đơn giản: Giúp bạn thỏa mãn trọn vẹn đam mê Pickleball với một thể trạng khỏe mạnh. Bạn cứ việc tỏa sáng trên sân, bảo vệ cơ bắp của bạn hãy để Xuân lo!
               </p>
             </div>
 
