@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Trophy } from 'lucide-react';
 
 const logos = [
-  "Giải Vô Địch Pickleball Mở Rộng 2023",
+  "Giải CLB AKCLUB tại An Khê",
   "Giải pickleball CLB BFF tại tuy Phước",
   "Giải AN THÁI TRIỆU tại An Nhơn",
   "Giải Pickleball Dinknutrition Open TPHCM",
