@@ -20,9 +20,9 @@ export default function PersonalStory() {
           >
             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-auto lg:flex-1 shadow-2xl border-4 border-white">
               <img 
-                src="https://i.postimg.cc/wvC6gjm4/Logo-A-i-Xua-n-Tra-n.png" 
+                src="https://i.postimg.cc/x1Ypc2fs/Chat-GPT-Image-01-32-10-2-thg-5-2026.png" 
                 alt="Ái Xuân Trần" 
-                className="w-full h-full object-cover lg:absolute lg:inset-0 bg-cream p-4"
+                className="w-full h-full object-cover lg:absolute lg:inset-0 bg-cream"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent"></div>
               
