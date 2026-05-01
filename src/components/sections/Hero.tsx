@@ -10,14 +10,14 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] bg-coral/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center lg:items-stretch">
           
           {/* Content */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-left"
+            className="text-left flex flex-col justify-center py-10 lg:py-0"
           >
             <div className="inline-flex items-start sm:items-center gap-2 px-4 py-2 rounded-2xl sm:rounded-full bg-sage/10 text-sage font-medium text-sm sm:text-base mb-6 max-w-full">
               <Stethoscope className="w-5 h-5 shrink-0 mt-0.5 sm:mt-0" />
@@ -77,18 +77,18 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative lg:h-full lg:min-h-[500px]"
           >
             {/* Main Action Image */}
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-square lg:aspect-[4/5] shadow-2xl bg-white flex items-center justify-center p-8">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-square lg:aspect-auto lg:h-full lg:absolute lg:inset-0 shadow-2xl bg-white flex items-center justify-center p-3 sm:p-5">
               <img 
                 src="https://i.postimg.cc/3NDjrvjv/z7781676558847-a23e3c4195086002e396e93703e2449b.jpg" 
                 alt="Chuyên gia xoa bóp bấm huyệt thể thao" 
                 className="w-full h-full object-cover rounded-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute inset-x-3 inset-y-3 sm:inset-x-5 sm:inset-y-5 bg-gradient-to-t from-forest/80 via-transparent to-transparent pointer-events-none rounded-2xl"></div>
               
-              <div className="absolute bottom-6 left-6 right-6">
+              <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 z-10">
                 <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-4 flex items-center gap-4">
                   <div className="w-12 h-12 bg-white flex justify-center items-center shrink-0" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}>
                     <Activity className="w-6 h-6 text-sage" />
