@@ -97,7 +97,7 @@ export default function FAQ() {
                 onClick={() => toggleAccordion(index)}
                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
               >
-                <span className="text-lg font-bold text-forest pr-4">{faq.question}</span>
+                <span className="text-lg font-bold text-forest pr-4 text-justify">{faq.question}</span>
                 <ChevronDown 
                   className={`w-6 h-6 text-[#FF6B35] transition-transform duration-300 shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} 
                 />
@@ -111,7 +111,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 pb-6 pt-0 text-text-body leading-relaxed border-t border-gray-50 mt-2">
+                    <div className="px-6 pb-6 pt-0 text-text-body leading-relaxed border-t border-gray-50 mt-2 text-justify">
                       <div className="mt-4">{faq.answer}</div>
                     </div>
                   </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { User, Users, GraduationCap, CheckCircle2, ArrowRight, Flame } from 'lucide-react';
+import { User, Users, GraduationCap, CheckCircle2, ArrowRight, Flame, MapPin, Info } from 'lucide-react';
 
 export default function Services() {
   const containerVariants = {
@@ -83,9 +83,23 @@ export default function Services() {
                   </li>
                 </ul>
               </div>
+
+              <div className="mb-6 space-y-3">
+                <div className="flex items-start gap-2.5 bg-gray-50 p-3 rounded-xl border border-gray-100">
+                  <MapPin className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700"><span className="font-bold text-gray-800">Địa chỉ cơ sở:</span> 63 Đường Phạm Ngọc Thạch, Thành phố Quy Nhơn, Tỉnh Gia Lai</span>
+                </div>
+                <div className="flex items-start gap-2.5 bg-orange-50 p-3 rounded-xl border border-orange-100">
+                  <Info className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                  <span className="text-sm text-[#FF6B35] font-medium">Lưu ý: Vui lòng đặt lịch trước để được chăm sóc tốt nhất</span>
+                </div>
+              </div>
               
-              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#2F5D50] text-white font-bold hover:bg-[#254a40] transition-all relative overflow-hidden group/btn mt-auto">
-                <span className="relative z-10 flex items-center gap-2">Đặt Lịch Chăm Sóc Ngay <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" /></span>
+              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center py-4 px-2 rounded-xl bg-[#2F5D50] text-white font-bold hover:bg-[#254a40] transition-all relative overflow-hidden group/btn mt-auto">
+                <span className="relative z-10 block text-center text-sm sm:text-base">
+                  Đặt Lịch Chăm Sóc Ngay 
+                  <ArrowRight className="inline-block w-4 h-4 ml-1.5 -mt-0.5 group-hover/btn:translate-x-1 transition-transform shrink-0" />
+                </span>
                 <div className="absolute inset-0 bg-[#FF6B35] translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
               </a>
             </div>
@@ -132,8 +146,11 @@ export default function Services() {
                 </ul>
               </div>
               
-              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#FF6B35] text-white font-bold hover:bg-[#e85d26] transition-all relative overflow-hidden group/btn mt-auto">
-                <span className="relative z-10 flex items-center gap-2">Mời Đồng Hành Giải Đấu <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" /></span>
+              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center py-4 px-2 rounded-xl bg-[#FF6B35] text-white font-bold hover:bg-[#e85d26] transition-all relative overflow-hidden group/btn mt-auto">
+                <span className="relative z-10 block text-center text-sm sm:text-base">
+                  Mời Đồng Hành Giải Đấu 
+                  <ArrowRight className="inline-block w-4 h-4 ml-1.5 -mt-0.5 group-hover/btn:translate-x-1 transition-transform shrink-0" />
+                </span>
                 <div className="absolute inset-0 bg-[#2F5D50] translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
               </a>
             </div>
@@ -187,8 +204,11 @@ export default function Services() {
                 </ul>
               </div>
               
-              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-amber-900 font-bold hover:from-amber-300 hover:to-amber-400 transition-all relative overflow-hidden group/btn mt-auto shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]">
-                <span className="relative z-10 flex items-center gap-2">Nhận Tư Vấn Khóa Chuyển Giao <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" /></span>
+              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center py-4 px-2 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-amber-900 font-bold hover:from-amber-300 hover:to-amber-400 transition-all relative overflow-hidden group/btn mt-auto shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]">
+                <span className="relative z-10 block text-center text-sm sm:text-base">
+                  Nhận Tư Vấn Khóa Chuyển Giao 
+                  <ArrowRight className="inline-block w-4 h-4 ml-1.5 -mt-0.5 group-hover/btn:translate-x-1 transition-transform shrink-0" />
+                </span>
                 <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
               </a>
             </div>
