@@ -9,12 +9,12 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="col-span-1 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <img src="https://i.postimg.cc/wvC6gjm4/Logo-A-i-Xua-n-Tra-n.png" alt="Ái Xuân Trần Logo" className="w-10 h-10 object-contain" />
-              <span className="font-heading font-bold text-xl">Ái Xuân Trần</span>
+            <div className="flex items-center gap-3 mb-6">
+              <img src="https://i.postimg.cc/wvC6gjm4/Logo-A-i-Xua-n-Tra-n.png" alt="Ái Xuân Trần Logo" className="w-16 h-16 object-contain" />
+              <span className="font-heading font-bold text-xl leading-tight">Ái Xuân Trần</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Sẵn sàng trở lại sân đấu với thể trạng 100%. Kết nối tinh hoa y học truyền thống và thể thao hiện đại.
+              Sẵn sàng trở lại sân đấu với thể trạng 100%. Kết nối tinh hoa y học truyền thống và hiện đại.
             </p>
             <div className="flex gap-4">
               <a href="https://www.facebook.com/aixuan.tran.79?locale=vi_VN" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sage hover:text-forest transition-colors text-white/80">
@@ -34,13 +34,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-lg">Thông Tin</h4>
             <ul className="space-y-3">
-              {['Về Ái Xuân Trần', 'Phương pháp phục hồi', 'Khách hàng nói gì', 'Câu hỏi thường gặp'].map((item, i) => (
-                <li key={i}>
-                  <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><a href="#story" className="text-white/70 hover:text-white transition-colors text-sm">Về Ái Xuân Trần</a></li>
+              <li><a href="#approach" className="text-white/70 hover:text-white transition-colors text-sm">Phương pháp phục hồi</a></li>
+              <li><a href="#in-action" className="text-white/70 hover:text-white transition-colors text-sm">Khách hàng nói gì</a></li>
+              <li><a href="#faq" className="text-white/70 hover:text-white transition-colors text-sm">Câu hỏi thường gặp</a></li>
             </ul>
           </div>
 
@@ -48,13 +45,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-lg">Dịch Vụ</h4>
             <ul className="space-y-3">
-              {['Chăm sóc cá nhân (B2C)', 'Đồng hành giải đấu (B2B)', 'Tư vấn trực tuyến', 'Chương trình huấn luyện'].map((item, i) => (
-                <li key={i}>
-                  <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Chăm sóc cá nhân (B2C)</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Đồng hành giải đấu (B2B)</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Chương trình huấn luyện</a></li>
+              <li><a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors text-sm">Tư vấn trực tuyến</a></li>
             </ul>
           </div>
 
