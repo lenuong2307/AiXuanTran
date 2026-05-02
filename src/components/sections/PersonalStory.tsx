@@ -4,7 +4,7 @@ import { Heart } from 'lucide-react';
 
 export default function PersonalStory() {
   return (
-    <section id="story" className="py-24 bg-beige relative overflow-hidden">
+    <section id="story" className="py-12 lg:py-16 bg-beige relative overflow-hidden">
       {/* Decorative fire/wood elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-coral/5 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sage/10 rounded-full blur-[100px] pointer-events-none" />

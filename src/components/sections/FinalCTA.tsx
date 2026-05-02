@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
-    <section className="bg-[#FF6B35] text-white py-16 lg:py-24 relative overflow-hidden">
+    <section className="bg-[#FF6B35] text-white py-12 lg:py-16 relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">

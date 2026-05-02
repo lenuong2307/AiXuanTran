@@ -109,7 +109,7 @@ function ReelCard({ item }: { item: any }) {
 
 export default function InAction() {
   return (
-    <section id="in-action" className="py-24 bg-[#2F5D50] text-white overflow-hidden relative">
+    <section id="in-action" className="py-12 lg:py-16 bg-[#2F5D50] text-white overflow-hidden relative">
       {/* Background Decors */}
       <div className="absolute top-0 right-0 w-[50vh] h-[50vh] bg-coral/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[50vh] h-[50vh] bg-sage/10 rounded-full blur-[120px] pointer-events-none"></div>

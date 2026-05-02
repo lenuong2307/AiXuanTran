@@ -40,7 +40,7 @@ const methods = [
 
 export default function Approach() {
   return (
-    <section id="approach" className="py-24 bg-[#5F7F6B] text-white relative overflow-hidden">
+    <section id="approach" className="py-12 lg:py-16 bg-[#5F7F6B] text-white relative overflow-hidden">
       {/* Abstract wave background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-5 pointer-events-none">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-sage">

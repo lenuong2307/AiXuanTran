@@ -4,7 +4,7 @@ import { ArrowRight, Phone, Stethoscope, Activity } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 overflow-hidden bg-background">
+    <section className="relative pt-20 pb-12 lg:pt-28 lg:pb-16 overflow-hidden bg-cream">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-sage/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] bg-coral/10 rounded-full blur-[80px] pointer-events-none" />
