@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Trophy, CheckCircle2, PlayCircle, Quote, ExternalLink } from 'lucide-react';
+import { Trophy, CheckCircle2, PlayCircle, Quote, ExternalLink, X } from 'lucide-react';
 
 const logos = [
   "Giải CLB AKCLUB tại An Khê",
@@ -192,6 +192,7 @@ function FeedbackCarousel() {
 
 export default function InAction() {
   const [currentChampionIndex, setCurrentChampionIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const championImages = [
     "https://i.postimg.cc/YS43mWMB/z7781678858930-b375f747edc0cbc223373494ef9a50a9.jpg",
     "https://i.postimg.cc/br0Lwf8c/z7782973594006-8837e9064fefb300ed79a1f08e171d8b.jpg"
@@ -472,6 +473,51 @@ export default function InAction() {
               </div>
             </motion.div>
           </div>
+
+          {/* Photo Grid / Gallery */}
+          <div className="mt-24 pt-12 border-t border-white/10">
+            <div className="text-center max-w-4xl mx-auto mb-10 px-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 text-[#FF6B35] uppercase tracking-wide leading-snug">
+                KHÔNG GIAN TRỊ LIỆU TĨNH TẠI <span style={{ fontFamily: '"Times New Roman", Times, serif' }}>&</span> THỰC CHIẾN SÂN ĐẤU MÁU LỬA
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto italic mt-4 md:mt-6">
+                "Từ cơ sở khang trang với máy móc hiện đại đến những pha 'bắt chuột' tốc độ bên mép sân Pickleball. Mọi không gian đều được Ái Xuân Trần chuẩn bị với sự chuyên nghiệp, tận tâm."
+              </p>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 px-2 sm:px-0"
+            >
+              {[
+                { src: "https://i.postimg.cc/02xB36tf/TD.jpg", alt: "Không gian trị liệu" },
+                { src: "https://i.postimg.cc/hjdpN754/z7117866262068-a84204681e57719bf9388e2d7ce5bd0e.jpg", alt: "Không gian trị liệu" },
+                { src: "https://i.postimg.cc/C50mWt4q/z7117866346113-171249ad62e161fbf658ccb8ba53f6b0.jpg", alt: "Không gian trị liệu" },
+                { src: "https://i.postimg.cc/pXqq6s5D/z7117866352017-5299ff2334a0038fc271afdf0be38f1c.jpg", alt: "Không gian trị liệu" },
+                { src: "https://i.postimg.cc/8cTmyv1Z/z7117866449922-1012cd823d1fc6b6bdbe6f14f1836402.jpg", alt: "Không gian trị liệu" },
+                { src: "https://i.postimg.cc/CxRH6Sgx/z7117866494309-bf9cca093a9d431020490c0ded68c1e8.jpg", alt: "Không gian trị liệu" },
+                { src: "https://i.postimg.cc/fW5czJWT/z7117866584505-c953459a3ed4937a8582cb6485506763.jpg", alt: "Thực chiến sân đấu" },
+                { src: "https://i.postimg.cc/X7myq5R6/z7781660511391-ab880cf6e2c048ddf6ef69b806538a88.jpg", alt: "Thực chiến sân đấu" },
+                { src: "https://i.postimg.cc/4NDmsgcs/z7781660528482-9f348ea08302aaaa7fa61b8ac80100b3.jpg", alt: "Thực chiến sân đấu" },
+                { src: "https://i.postimg.cc/zB2GMZ5J/z7781678850701-22b7692fc5e164fd05d9b647cacbcd7b.jpg", alt: "Thực chiến sân đấu" },
+                { src: "https://i.postimg.cc/CxpL94yT/z7781679206690-a8c9aaf0f3c75dea26503e4a70e41788.jpg", alt: "Thực chiến sân đấu" },
+                { src: "https://i.postimg.cc/HLBYcDrk/z7781679218484-22159ca3f957e31b5feeecd342c06370.jpg", alt: "Thực chiến sân đấu" }
+              ].map((img, i) => (
+                <div 
+                  key={i} 
+                  onClick={() => setSelectedImage(img.src)}
+                  className="aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer relative bg-white/5"
+                >
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                     <span className="text-white font-bold tracking-wider uppercase text-sm border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">Phóng to</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Khối 3: BỨC TƯỜNG DANH VỌNG (Wall of Love) */}
@@ -500,6 +546,36 @@ export default function InAction() {
         </div>
 
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button 
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 text-white/70 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-full p-2"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="w-6 h-6 sm:w-8 sm:h-8" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              src={selectedImage}
+              alt="Phóng to"
+              className="max-w-full max-h-full rounded-2xl shadow-2xl object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

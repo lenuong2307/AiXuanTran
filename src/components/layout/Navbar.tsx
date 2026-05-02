@@ -44,13 +44,17 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a 
+            <motion.a 
               href="tel:0938614687"
+              animate={{ opacity: [1, 0.5, 1] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
               className="flex items-center gap-1.5 px-5 py-2.5 rounded-full text-white text-sm font-bold tracking-wide transition-all border border-transparent hover:bg-white/10"
             >
-              <Phone className="w-4 h-4" />
-              0938614687
-            </a>
+              <motion.div animate={{ rotate: [0, -10, 10, -10, 10, 0], scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 1.5, repeatDelay: 1 }}>
+                <Phone className="w-4 h-4 text-coral" />
+              </motion.div>
+              <span className="text-coral">0938614687</span>
+            </motion.a>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -83,14 +87,18 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a 
+              <motion.a 
                 href="tel:0938614687"
-                className="mt-4 px-5 py-3 flex justify-center items-center gap-2 rounded-lg text-white font-bold tracking-wide border border-white/10 hover:bg-white/5 shadow-sm"
+                animate={{ opacity: [1, 0.6, 1] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                className="mt-4 px-5 py-3 flex justify-center items-center gap-2 rounded-lg text-coral font-bold tracking-wide border border-white/10 hover:bg-white/5 shadow-sm bg-coral/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Phone className="w-5 h-5" />
+                <div className="animate-pulse">
+                  <Phone className="w-5 h-5" />
+                </div>
                 0938614687
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         )}
