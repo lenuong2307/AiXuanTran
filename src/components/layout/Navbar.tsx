@@ -45,7 +45,7 @@ export default function Navbar() {
               </a>
             ))}
             <a 
-              href="#services"
+              href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-full bg-coral text-white text-sm font-medium hover:bg-coral-light transition-all shadow-lg hover:shadow-coral/30"
             >
               Đặt lịch ngay
@@ -83,7 +83,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a 
-                href="#services"
+                href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer"
                 className="mt-4 px-5 py-3 text-center rounded-lg bg-coral text-white font-medium shadow-md shadow-coral/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

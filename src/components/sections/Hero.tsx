@@ -36,14 +36,14 @@ export default function Hero() {
             
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-8 w-full max-w-[540px]">
               <a 
-                href="#services" 
+                href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer"
                 className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-[#FF6B35] hover:bg-[#e85d26] text-white rounded-full font-bold transition-all shadow-[0_10px_20px_rgba(255,107,53,0.3)] text-[13px] sm:text-[14px] xl:text-base sm:whitespace-nowrap uppercase tracking-wider"
               >
                 Đặt lịch phục hồi ngay
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
               </a>
               <a 
-                href="#services" 
+                href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer"
                 className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-transparent text-sage border-2 border-sage rounded-full font-semibold hover:bg-sage hover:text-white transition-all text-[13px] sm:text-[14px] xl:text-base sm:whitespace-nowrap"
               >
                 Mời đồng hành giải đấu
