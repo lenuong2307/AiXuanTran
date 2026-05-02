@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { User, Users, GraduationCap, CheckCircle2, ArrowRight } from 'lucide-react';
+import { User, Users, GraduationCap, CheckCircle2, ArrowRight, Flame } from 'lucide-react';
 
 export default function Services() {
   const containerVariants = {
@@ -45,18 +45,18 @@ export default function Services() {
         >
           {/* KHỐI 1: CHĂM SÓC & PHỤC HỒI CÁ NHÂN */}
           <motion.div variants={itemVariants} className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl group hover:-translate-y-2 transition-transform duration-300">
-            <div className="relative h-56 sm:h-64 overflow-hidden">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" 
+                src="https://i.postimg.cc/zBx3wY68/z7784666669813-3c337b6dfede4087f685b6f6595f6253.jpg" 
                 alt="Chăm sóc và phục hồi cá nhân" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <span className="inline-flex items-center gap-1.5 bg-[#FF6B35] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
-                  <User className="w-3.5 h-3.5" /> Dành cho VĐV
+                  <User className="w-3.5 h-3.5" /> Dành cho cá nhân
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold leading-tight shadow-sm">PHỤC HỒI THỂ LỰC CHUYÊN SÂU 1:1</h3>
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight shadow-sm">PHỤC HỒI THỂ LỰC CHUYÊN SÂU <span className="font-['Times_New_Roman']">1:1</span></h3>
               </div>
             </div>
             
@@ -75,7 +75,7 @@ export default function Services() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700">"Cắt" đứt sự mệt mỏi, giải phóng cơ bắp hoàn toàn.</span>
+                    <span className="text-sm text-gray-700">"Cắt" đứt sự mệt mỏi, giải phóng cơ bắp</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
@@ -93,25 +93,25 @@ export default function Services() {
 
           {/* KHỐI 2: ĐỒNG HÀNH CÙNG GIẢI ĐẤU */}
           <motion.div variants={itemVariants} className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl group hover:-translate-y-2 transition-transform duration-300">
-            <div className="relative h-56 sm:h-64 overflow-hidden">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1599058945522-28d584b6f4ff?auto=format&fit=crop&q=80" 
+                src="https://i.postimg.cc/Kzpvkr3P/z7781660500541-cd54838831c30327b4ad3b086f1ac43c.jpg" 
                 alt="Đồng hành cùng giải đấu" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <span className="inline-flex items-center gap-1.5 bg-[#2F5D50] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
-                  <Users className="w-3.5 h-3.5" /> Dành cho BTC
+                  <Users className="w-3.5 h-3.5" /> Dành cho chủ sân/BTC
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold leading-tight shadow-sm">BẢO TRỢ Y TẾ & PHỤC HỒI THẢM ĐẤU</h3>
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight shadow-sm uppercase">chăm sóc <span className="font-['Times_New_Roman']">&amp;</span> phục hồi</h3>
               </div>
             </div>
             
             <div className="flex flex-col flex-1 p-6 sm:p-8 bg-white text-gray-800">
               <div className="mb-6">
                 <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-2">Vấn đề giải quyết</p>
-                <p className="text-gray-700 text-sm leading-relaxed">Rủi ro chấn thương trong thi đấu, giải đấu thiếu đội ngũ y tế chuyên nghiệp để xử lý tình huống khẩn cấp.</p>
+                <p className="text-gray-700 text-sm leading-relaxed">Rủi ro chấn thương trong thi đấu, giải đấu thiếu đội ngũ chăm sóc chuyên nghiệp để xử lý tình huống khẩn cấp.</p>
               </div>
               
               <div className="mb-8 flex-1">
@@ -143,14 +143,14 @@ export default function Services() {
           <motion.div variants={itemVariants} className="flex flex-col bg-[#1A332B] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(26,51,43,0.5)] group hover:-translate-y-2 transition-transform duration-300 relative border border-white/10">
             {/* Premium Badge */}
             <div className="absolute top-4 right-4 z-20">
-              <span className="bg-amber-400 text-amber-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 uppercase tracking-widest">
-                ĐIỂM NHẤN CAO CẤP
+              <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.6)] flex items-center gap-1 uppercase tracking-widest animate-pulse border border-red-400">
+                <Flame className="w-3.5 h-3.5" /> HOT
               </span>
             </div>
 
-            <div className="relative h-56 sm:h-64 overflow-hidden">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80" 
+                src="https://i.postimg.cc/hjsQCdJ6/z7784556654540-f37dba3db71c53ee87e3c04ea22ebd6e.jpg" 
                 alt="Chuyển giao nghề nghiệp" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -182,7 +182,7 @@ export default function Services() {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-200"><strong className="text-white">Đồng hành kinh doanh:</strong> Hỗ trợ tư vấn setup mô hình, cách xây dựng thương hiệu cá nhân để thu hút cả khách lẻ lẫn các giải đấu lớn. (Được học từ chính kinh nghiệm thực chiến của Ái Xuân).</span>
+                    <span className="text-sm text-gray-200"><strong className="text-white">Đồng hành kinh doanh:</strong> Hỗ trợ tư vấn setup mô hình, cách xây dựng thương hiệu cá nhân để thu hút cả khách lẻ lẫn các giải đấu lớn. (Được học từ chính kinh nghiệm thực chiến của Ái Xuân Trần).</span>
                   </li>
                 </ul>
               </div>
