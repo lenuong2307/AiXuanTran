@@ -1,99 +1,202 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { User, Users, CheckCircle2 } from 'lucide-react';
+import { User, Users, GraduationCap, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function Services() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
-    <section id="services" className="py-12 lg:py-16 bg-[#5F7F6B] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
-            Dịch Vụ Trọng Tâm
+    <section id="services" className="py-16 lg:py-24 bg-[#5F7F6B] text-white overflow-hidden relative">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-white/5 blur-[100px]"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] rounded-full bg-[#FF6B35]/10 blur-[100px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 uppercase tracking-wide leading-tight">
+            GIẢI PHÁP PHỤC HỒI ĐA TẦNG CỦA ÁI XUÂN TRẦN
           </h2>
-          <p className="text-white/90 text-lg">
-            Giải pháp chuyên sâu thiết kế riêng cho cá nhân đam mê thể thao và các ban tổ chức giải đấu chuyên nghiệp.
+          <p className="text-white/90 text-lg md:text-xl leading-relaxed">
+            Từ việc xoa dịu cơn đau của từng cá nhân, nâng tầm đẳng cấp cho các giải đấu, đến việc chuyển giao công thức thành công trong ngách phục hồi thể thao.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Service B2C */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col p-8 sm:p-10 rounded-[2rem] border border-white/20 bg-white shadow-2xl relative overflow-hidden text-text-dark"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-coral/5 rounded-bl-full -z-10" />
-            
-            <div className="w-14 h-14 bg-sage/10 text-sage rounded-2xl flex justify-center items-center mb-6">
-              <User className="w-7 h-7" />
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid lg:grid-cols-3 gap-8 items-stretch"
+        >
+          {/* KHỐI 1: CHĂM SÓC & PHỤC HỒI CÁ NHÂN */}
+          <motion.div variants={itemVariants} className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl group hover:-translate-y-2 transition-transform duration-300">
+            <div className="relative h-56 sm:h-64 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" 
+                alt="Chăm sóc và phục hồi cá nhân" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="inline-flex items-center gap-1.5 bg-[#FF6B35] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                  <User className="w-3.5 h-3.5" /> Dành cho VĐV
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight shadow-sm">PHỤC HỒI THỂ LỰC CHUYÊN SÂU 1:1</h3>
+              </div>
             </div>
             
-            <h3 className="text-2xl font-heading font-bold text-text-dark mb-2">Chăm Sóc <span className="font-['Times_New_Roman']">&amp;</span> Phục Hồi Cá Nhân</h3>
-            <p className="text-text-body mb-8">Dành cho VĐV, người chơi phong trào cần lấy lại thể trạng nhanh chóng.</p>
+            <div className="flex flex-col flex-1 p-6 sm:p-8 bg-white text-gray-800">
+              <div className="mb-6">
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-2">Vấn đề giải quyết</p>
+                <p className="text-gray-700 text-sm leading-relaxed">Căng cơ bó tắc lâu ngày, đau khớp gối, cổ tay, viêm gót chân, kiệt sức sau các buổi đánh dài.</p>
+              </div>
+              
+              <div className="mb-8 flex-1">
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-3">Quyền lợi</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700">Ứng dụng liệu trình 3 Tác động (Đông y - Công nghệ - Thực dưỡng) thiết kế riêng theo thể trạng từng người.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700">"Cắt" đứt sự mệt mỏi, giải phóng cơ bắp hoàn toàn.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700">Rút ngắn <strong className="text-[#2F5D50]">50%</strong> thời gian nghỉ dưỡng, đưa bạn trở lại sân tập với trạng thái cơ thể nhẹ bẫng và linh hoạt nhất.</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#2F5D50] text-white font-bold hover:bg-[#254a40] transition-all relative overflow-hidden group/btn mt-auto">
+                <span className="relative z-10 flex items-center gap-2">Đặt Lịch Chăm Sóc Ngay <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" /></span>
+                <div className="absolute inset-0 bg-[#FF6B35] translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* KHỐI 2: ĐỒNG HÀNH CÙNG GIẢI ĐẤU */}
+          <motion.div variants={itemVariants} className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-2xl group hover:-translate-y-2 transition-transform duration-300">
+            <div className="relative h-56 sm:h-64 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1599058945522-28d584b6f4ff?auto=format&fit=crop&q=80" 
+                alt="Đồng hành cùng giải đấu" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="inline-flex items-center gap-1.5 bg-[#2F5D50] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+                  <Users className="w-3.5 h-3.5" /> Dành cho BTC
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight shadow-sm">BẢO TRỢ Y TẾ & PHỤC HỒI THẢM ĐẤU</h3>
+              </div>
+            </div>
             
-            <ul className="space-y-4 mb-8 flex-grow">
-              <li className="flex items-start gap-3 text-text-dark">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                <span>Giải cơ tóm, căng cơ cấp tốc <strong className="text-forest">chỉ trong 30 phút</strong></span>
-              </li>
-              <li className="flex items-start gap-3 text-text-dark">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                <span>Phục hồi <strong className="text-forest">ngay lập tức</strong> sau thi đấu cường độ cao</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-dark">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                <span>Điều trị <strong className="text-forest">dứt điểm</strong> đau khớp, mỏi cơ</span>
-              </li>
-              <li className="flex items-start gap-3 text-text-dark">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                <span>Tư vấn dinh dưỡng <span className="font-['Times_New_Roman']">&amp;</span> bài tập phòng ngừa</span>
-              </li>
-            </ul>
-            
-            <div className="mb-4 text-center">
-              <span className="inline-block bg-red-100 text-red-600 font-bold text-xs px-3 py-1.5 rounded-full uppercase tracking-wider">
-                Giới hạn 5 suất đặt lịch/ngày để đảm bảo chất lượng
+            <div className="flex flex-col flex-1 p-6 sm:p-8 bg-white text-gray-800">
+              <div className="mb-6">
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-2">Vấn đề giải quyết</p>
+                <p className="text-gray-700 text-sm leading-relaxed">Rủi ro chấn thương trong thi đấu, giải đấu thiếu đội ngũ y tế chuyên nghiệp để xử lý tình huống khẩn cấp.</p>
+              </div>
+              
+              <div className="mb-8 flex-1">
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-3">Quyền lợi</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-[#2F5D50] shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700">Trực tiếp sơ cứu, xử lý chuột rút, lật cổ chân, căng cơ cấp tốc tại sân cho VĐV.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-[#2F5D50] shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700">Thiết lập trạm phục hồi năng lượng ngay tại giải đấu (kết hợp máy móc và xoa bóp giãn cơ ngắn).</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-[#2F5D50] shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-700"><strong className="text-[#FF6B35]">Giá trị cộng thêm:</strong> Bảo chứng uy tín, tạo trải nghiệm WOW cho người tham gia và nâng tầm sự chuyên nghiệp cho toàn bộ giải đấu của bạn.</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#FF6B35] text-white font-bold hover:bg-[#e85d26] transition-all relative overflow-hidden group/btn mt-auto">
+                <span className="relative z-10 flex items-center gap-2">Mời Đồng Hành Giải Đấu <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" /></span>
+                <div className="absolute inset-0 bg-[#2F5D50] translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* KHỐI 3: CHUYỂN GIAO NGHỀ NGHIỆP */}
+          <motion.div variants={itemVariants} className="flex flex-col bg-[#1A332B] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(26,51,43,0.5)] group hover:-translate-y-2 transition-transform duration-300 relative border border-white/10">
+            {/* Premium Badge */}
+            <div className="absolute top-4 right-4 z-20">
+              <span className="bg-amber-400 text-amber-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1 uppercase tracking-widest">
+                ĐIỂM NHẤN CAO CẤP
               </span>
             </div>
 
-            <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex justify-center py-4 rounded-xl bg-[#FF6B35] text-white font-bold hover:bg-[#e85d26] transition-all shadow-[0_10px_20px_rgba(255,107,53,0.3)] uppercase tracking-wider hover:scale-[1.02] active:scale-95">
-              Đặt lịch phục hồi ngay
-            </a>
-          </motion.div>
-
-          {/* Service B2B */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col p-8 sm:p-10 rounded-[2rem] border border-forest bg-forest text-white shadow-2xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-sage/20 rounded-bl-full -z-10" />
-            
-            <div className="w-14 h-14 bg-sage/20 text-sage rounded-2xl flex justify-center items-center mb-6">
-              <Users className="w-7 h-7" />
+            <div className="relative h-56 sm:h-64 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80" 
+                alt="Chuyển giao nghề nghiệp" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A332B] via-[#1A332B]/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="inline-flex items-center gap-1.5 bg-amber-400/20 text-amber-400 border border-amber-400/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-sm">
+                  <GraduationCap className="w-3.5 h-3.5" /> Dành cho Chủ Spa
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight text-white shadow-sm">CHUYỂN GIAO MÔ HÌNH "CHUYÊN GIA BẮT CHUỘT"</h3>
+              </div>
             </div>
             
-            <h3 className="text-2xl font-heading font-bold mb-2">Đồng Hành Y Tế Giải Đấu</h3>
-            <p className="text-white/80 mb-8">Bảo chứng y tế chuyên nghiệp cho Ban Tổ Chức (BTC) và nhà tài trợ.</p>
-            
-            <ul className="space-y-4 mb-10 flex-grow">
-              {['Đội ngũ túc trực sơ cứu tại sân', 'Xử lý chấn thương khẩn cấp (chuột rút, bong gân)', 'Khu vực phục hồi riêng biệt cho VĐV', 'Nâng tầm uy tín, sự chuyên nghiệp cho giải'].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-white/90">
-                  <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex justify-center py-4 rounded-xl bg-[#FF6B35] text-white font-bold hover:bg-[#e85d26] transition-all shadow-[0_10px_20px_rgba(255,107,53,0.3)] uppercase tracking-wider hover:scale-[1.02] active:scale-95">
-              Đăng ký chăm sóc thi đấu
-            </a>
+            <div className="flex flex-col flex-1 p-6 sm:p-8 text-white relative z-10">
+              <div className="mb-6">
+                <p className="text-sm text-gray-400 font-bold uppercase tracking-wider mb-2">Vấn đề giải quyết</p>
+                <p className="text-gray-300 text-sm leading-relaxed">Đam mê lĩnh vực chăm sóc sức khỏe thể thao, muốn khai thác "đại dương xanh" Pickleball nhưng thiếu kiến thức chuẩn và quy trình kinh doanh.</p>
+              </div>
+              
+              <div className="mb-8 flex-1">
+                <p className="text-sm text-gray-400 font-bold uppercase tracking-wider mb-3">Quyền lợi</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-200"><strong className="text-white">Nắm giữ bí quyết:</strong> Chuyển giao toàn bộ kỹ thuật xoa bóp bấm huyệt và vận hành thiết bị năng lượng sinh học chuyên biệt cho chấn thương Pickleball.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-200"><strong className="text-white">Quy trình chuẩn:</strong> Công thức phục hồi đã được kiểm chứng trên hàng trăm VĐV và các nhà vô địch.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-200"><strong className="text-white">Đồng hành kinh doanh:</strong> Hỗ trợ tư vấn setup mô hình, cách xây dựng thương hiệu cá nhân để thu hút cả khách lẻ lẫn các giải đấu lớn. (Được học từ chính kinh nghiệm thực chiến của Ái Xuân).</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <a href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-amber-900 font-bold hover:from-amber-300 hover:to-amber-400 transition-all relative overflow-hidden group/btn mt-auto shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]">
+                <span className="relative z-10 flex items-center gap-2">Nhận Tư Vấn Khóa Chuyển Giao <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" /></span>
+                <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+              </a>
+            </div>
           </motion.div>
-        </div>
+
+        </motion.div>
       </div>
     </section>
   );
 }
+
