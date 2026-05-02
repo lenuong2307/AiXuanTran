@@ -6,6 +6,8 @@ import Approach from './components/sections/Approach';
 import InAction from './components/sections/InAction';
 import Services from './components/sections/Services';
 import PersonalStory from './components/sections/PersonalStory';
+import FAQ from './components/sections/FAQ';
+import FinalCTA from './components/sections/FinalCTA';
 import Footer from './components/layout/Footer';
 import StickyContact from './components/layout/StickyContact';
 
@@ -20,6 +22,8 @@ export default function App() {
         <Approach />
         <InAction />
         <Services />
+        <FAQ />
+        <FinalCTA />
       </main>
       <Footer />
       <StickyContact />

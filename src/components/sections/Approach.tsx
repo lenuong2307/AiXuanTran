@@ -40,7 +40,7 @@ const methods = [
 
 export default function Approach() {
   return (
-    <section id="approach" className="py-24 bg-forest text-white relative overflow-hidden">
+    <section id="approach" className="py-24 bg-[#5F7F6B] text-white relative overflow-hidden">
       {/* Abstract wave background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-5 pointer-events-none">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-sage">
@@ -54,7 +54,7 @@ export default function Approach() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sage font-bold tracking-wider text-sm lg:text-base uppercase mb-4 block"
+            className="text-white/90 font-bold tracking-wider text-sm lg:text-base uppercase mb-4 block"
           >
             Hệ Phương Pháp Phục Hồi Toàn Diện
           </motion.span>
@@ -65,14 +65,14 @@ export default function Approach() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(13px,3.5vw,40px)] sm:text-[clamp(16px,2.8vw,40px)] md:text-[clamp(20px,2.5vw,40px)] lg:text-[40px] font-heading font-bold mb-6 pt-2 leading-[1.2] whitespace-nowrap tracking-tight sm:tracking-normal"
           >
-            KẾT HỢP TINH HOA ĐÔNG Y, CÔNG NGHỆ & THỰC DƯỠNG
+            <span className="text-[#FF6B35]">KẾT HỢP TINH HOA</span> ĐÔNG Y, CÔNG NGHỆ & THỰC DƯỠNG
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-coral text-lg lg:text-xl font-medium mb-8 max-w-4xl mx-auto"
+            className="text-[#FF6B35] text-lg lg:text-xl font-medium mb-8 max-w-4xl mx-auto"
           >
             Hỗ trợ giải cơ, xoa dịu căng thẳng và nạp lại năng lượng nhanh chóng – Giúp bạn duy trì phong độ đỉnh cao trên sân Pickleball.
           </motion.p>
@@ -97,11 +97,11 @@ export default function Approach() {
               transition={{ delay: index * 0.1 + 0.4 }}
               className="bg-white text-text-dark rounded-[2rem] p-8 shadow-xl border border-gray-100 flex flex-col transition-transform hover:-translate-y-2 hover:shadow-2xl duration-300"
             >
-              <div className="w-16 h-16 rounded-2xl bg-forest/10 text-forest flex items-center justify-center mb-6 shrink-0">
+              <div className="w-16 h-16 rounded-2xl bg-sage/10 text-sage flex items-center justify-center mb-6 shrink-0">
                 <item.icon className="w-8 h-8" />
               </div>
               <h3 className="text-xl lg:text-2xl font-bold font-heading mb-1 text-forest">{item.title}</h3>
-              <div className="text-coral font-medium mb-6">{item.subtitle}</div>
+              <div className="text-[#FF6B35] font-medium mb-6">{item.subtitle}</div>
               
               <div className="mb-6 bg-cream/50 p-4 rounded-xl">
                 <span className="font-bold text-xs lg:text-sm uppercase tracking-wider text-text-body block mb-2">Phương pháp:</span>
@@ -113,7 +113,7 @@ export default function Approach() {
                 <ul className="space-y-4">
                   {item.benefits.map((benefit, i) => (
                     <li key={i} className="flex gap-4 text-text-body">
-                      <div className="w-2 h-2 rounded-full bg-coral mt-2 shrink-0"></div>
+                      <div className="w-2 h-2 rounded-full bg-[#FF6B35] mt-2 shrink-0"></div>
                       <span className="leading-relaxed text-sm lg:text-base text-justify">{benefit}</span>
                     </li>
                   ))}
@@ -137,9 +137,9 @@ export default function Approach() {
             href="https://zalo.me/0938614687" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-coral hover:bg-[#e86b4f] text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl font-bold text-lg lg:text-xl transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(242,124,98,0.3)] hover:shadow-[0_20px_40px_rgba(242,124,98,0.4)]"
+            className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl font-bold uppercase tracking-wider transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:shadow-[0_20px_40px_rgba(255,107,53,0.4)]"
           >
-            Nhận tư vấn lộ trình phục hồi cá nhân
+            Nhận tư vấn cho VĐV Pickleball
           </a>
         </motion.div>
       </div>

@@ -34,9 +34,82 @@ const gallery = [
   }
 ];
 
+const videoReels = [
+  {
+    id: 1,
+    title: "Cắt cơn chuột rút tại mép sân",
+    poster: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80",
+    video: "https://videos.pexels.com/video-files/3196164/3196164-sd_640_360_25fps.mp4"
+  },
+  {
+    id: 2,
+    title: "VĐV vô địch nói gì?",
+    poster: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80",
+    video: "https://videos.pexels.com/video-files/3652803/3652803-sd_640_360_25fps.mp4"
+  },
+  {
+    id: 3,
+    title: "Không khí giải Dinknutrition",
+    poster: "https://images.unsplash.com/photo-1622599511051-16fd808eec97?auto=format&fit=crop&q=80",
+    video: "https://videos.pexels.com/video-files/3182811/3182811-sd_640_360_25fps.mp4"
+  },
+  {
+    id: 4,
+    title: "Chuyên sâu phục hồi tĩnh lặng",
+    poster: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80",
+    video: "https://videos.pexels.com/video-files/4055490/4055490-sd_640_360_25fps.mp4"
+  }
+];
+
+function ReelCard({ item }: { item: any }) {
+  const [playing, setPlaying] = React.useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    setPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  return (
+    <div className="w-[280px] sm:w-[320px] aspect-[9/16] shrink-0 snap-center relative rounded-[2rem] overflow-hidden bg-black shadow-xl border border-white/10 group cursor-pointer" onClick={!playing ? handlePlay : undefined}>
+      <video
+        ref={videoRef}
+        controls={playing}
+        playsInline
+        className="w-full h-full object-cover"
+        poster={item.poster}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+      >
+        <source src={item.video} type="video/mp4" />
+      </video>
+      
+      {!playing && (
+        <div className="absolute inset-0 z-10 flex flex-col justify-between p-6 bg-gradient-to-t from-[#2F5D50] via-transparent to-[#2F5D50]/80 transition-colors">
+          <div className="text-center mt-2">
+            <span className="inline-block bg-[#FF6B35] text-white font-bold text-sm uppercase tracking-wider px-4 py-2 rounded-xl shadow-[0_5px_15px_rgba(255,107,53,0.3)] border border-[#FF6B35]/30">
+              [{item.title}]
+            </span>
+          </div>
+          
+          <div className="flex justify-center mb-10">
+            <div 
+              className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/40 group-hover:scale-110 group-hover:bg-[#FF6B35] group-hover:border-transparent transition-all shadow-[0_0_30px_rgba(255,107,53,0)] group-hover:shadow-[0_0_40px_rgba(255,107,53,0.6)]"
+            >
+              <PlayCircle className="w-12 h-12" />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function InAction() {
   return (
-    <section id="in-action" className="py-24 bg-[#0B132B] text-white overflow-hidden relative">
+    <section id="in-action" className="py-24 bg-[#2F5D50] text-white overflow-hidden relative">
       {/* Background Decors */}
       <div className="absolute top-0 right-0 w-[50vh] h-[50vh] bg-coral/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[50vh] h-[50vh] bg-sage/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -58,7 +131,7 @@ export default function InAction() {
           className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 pt-2 leading-[1.2]"
         >
           TỪ PHÒNG PHỤC HỒI ĐẾN THẢM ĐẤU: <br className="hidden md:block" />
-          <span className="text-coral">BẢO CHỨNG THỂ LỰC</span> CHO NHỮNG NHÀ VÔ ĐỊCH
+          <span className="text-[#FF6B35]">BẢO CHỨNG THỂ LỰC</span> CHO NHỮNG NHÀ VÔ ĐỊCH
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
@@ -69,6 +142,45 @@ export default function InAction() {
         >
           Đồng hành cùng các giải đấu lớn nhỏ – Nơi năng lực của 'Chuyên gia bắt chuột' được minh chứng bằng thực tế.
         </motion.p>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-8 lg:gap-16 mt-12 mb-10"
+        >
+          <div className="flex flex-col items-center">
+            <span className="text-4xl md:text-5xl font-black text-[#FF6B35]">20+</span>
+            <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-2">Giải Đấu</span>
+          </div>
+          <div className="w-px h-16 bg-white/10 hidden md:block"></div>
+          <div className="flex flex-col items-center">
+            <span className="text-4xl md:text-5xl font-black text-[#FF6B35]">500+</span>
+            <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-2">Vận Động Viên</span>
+          </div>
+          <div className="w-px h-16 bg-white/10 hidden md:block"></div>
+          <div className="flex flex-col items-center">
+            <span className="text-4xl md:text-5xl font-black text-[#FF6B35]">100%</span>
+            <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-2">Hồi Phục Tức Thì</span>
+          </div>
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, y: 10 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ delay: 0.4 }}
+        >
+          <a 
+            href="https://zalo.me/0938614687" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-wider text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)]"
+          >
+            Đăng ký chăm sóc thi đấu
+          </a>
+        </motion.div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24">
@@ -86,16 +198,16 @@ export default function InAction() {
               alt="Nhà vô địch" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B132B]/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2F5D50]/80 to-transparent"></div>
             <div className="absolute bottom-6 left-6 right-6">
-              <div className="flex items-center gap-3 text-coral font-bold uppercase tracking-widest text-sm mb-2">
+              <div className="flex items-center gap-3 text-[#FF6B35] font-bold uppercase tracking-widest text-sm mb-2">
                 <Trophy className="w-5 h-5" />
                 Câu Chuyện Thành Công
               </div>
             </div>
           </div>
-          <div className="space-y-6">
-            <Quote className="w-12 h-12 text-sage opacity-50" />
+          <div className="space-y-6 border-l-[6px] border-[#FF6B35] pl-6 bg-white/5 py-4 rounded-r-2xl">
+            <Quote className="w-10 h-10 text-[#FF6B35] opacity-80" />
             <h3 className="text-2xl sm:text-3xl font-heading font-bold italic text-white/90">
               "Đằng sau mỗi chiếc cúp, là sự bền bỉ của cơ bắp."
             </h3>
@@ -121,7 +233,7 @@ export default function InAction() {
                 "Tạo điểm nhấn chuyên nghiệp, gia tăng giá trị cho mọi giải đấu."
               ].map((item, i) => (
                 <li key={i} className="flex gap-3 items-start bg-white/5 p-4 rounded-xl border border-white/5">
-                  <CheckCircle2 className="w-5 h-5 text-sage shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
                   <span className="text-gray-300 text-sm md:text-base">{item}</span>
                 </li>
               ))}
@@ -130,9 +242,9 @@ export default function InAction() {
               href="https://zalo.me/0938614687" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-sage hover:bg-[#688a6d] text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(119,154,124,0.2)]"
+              className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-wider text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)]"
             >
-              Mời Ái Xuân đồng hành cùng giải đấu của bạn
+              Mời Ái Xuân đồng hành giải đấu
             </a>
           </div>
 
@@ -141,7 +253,7 @@ export default function InAction() {
             <div className="animate-marquee whitespace-nowrap flex items-center">
               {[...logos, ...logos].map((logo, index) => (
                 <div key={index} className="mx-8 flex items-center gap-3">
-                  <Trophy className="w-4 h-4 text-coral/60" />
+                  <Trophy className="w-4 h-4 text-sage/80" />
                   <span className="text-sm md:text-base font-bold text-gray-400 uppercase tracking-widest">{logo}</span>
                 </div>
               ))}
@@ -192,7 +304,7 @@ export default function InAction() {
               </div>
               
               <div className="flex-1 w-full relative">
-                <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl relative group bg-[#0B132B]">
+                <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl relative group bg-[#2F5D50]">
                   {/* Mockup of an article screen */}
                   <div className="bg-white p-4">
                     <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
@@ -224,73 +336,180 @@ export default function InAction() {
             </div>
           </motion.div>
 
-          {/* Video Highlights */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-video max-w-4xl mx-auto relative group"
-          >
-            <video 
-              src="https://videos.pexels.com/video-files/3196164/3196164-sd_640_360_25fps.mp4" 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-            <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-              Highlights
+          {/* Reel-style Video Library */}
+          <div className="mt-24 pt-12 border-t border-white/10">
+            <div className="text-center max-w-4xl mx-auto mb-10 px-4">
+              <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-[#FF6B35] uppercase tracking-wide">
+                CHUYÊN MÔN ĐƯỢC CHỨNG MINH BẰNG NHỮNG KHOẢNH KHẮC THỰC TẾ
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto italic">
+                "Không lý thuyết. Không cam kết suông. Uy tín của Ái Xuân được xây dựng từ những giọt mồ hôi trên sân, những pha cứu nguy tức thì và nụ cười của các VĐV sau khi phục hồi 100% thể lực. Hãy vuốt để xem những khoảnh khắc thực chiến và lắng nghe chia sẻ từ chính những người trong cuộc."
+              </p>
             </div>
-          </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="w-full relative px-2 sm:px-0"
+            >
+              <div className="flex overflow-x-auto gap-4 sm:gap-8 pb-4 pt-4 sm:px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                {/* Spacer block for sm screens to ensure content starts with some margin */}
+                <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
+                
+                 {videoReels.map((item) => (
+                   <ReelCard key={item.id} item={item} />
+                 ))}
+                 
+                 {/* Spacer block for sm screens to ensure content ends with some margin */}
+                 <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
+              </div>
+              
+              {/* Swipe Indicator */}
+              <div className="flex justify-center items-center text-gray-400 text-sm gap-2 animate-pulse mt-4 mb-4">
+                 <span className="uppercase tracking-widest font-bold text-white/50">← Vuốt ngang để xem thêm →</span>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Khối 3: THƯ VIỆN THỰC CHIẾN */}
+        {/* Khối 3: BỨC TƯỜNG DANH VỌNG (Wall of Love) */}
         <div className="pt-12 border-t border-white/10">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-white uppercase tracking-wide">
-              CHĂM SÓC TOÀN DIỆN: DÙ TRONG HAY NGOÀI SÂN BÓNG
+              BỨC TƯỜNG DANH VỌNG
             </h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              "Từ việc nạp lại năng lượng thư giãn tại cơ sở của Xuân, đến những pha xử lý ép cơ, bấm huyệt đầy tốc độ giữa tiếng hò reo của khán giả. Ở đâu có sự nỗ lực của VĐV, ở đó có sự đồng hành của Ái Xuân."
+            <p className="text-gray-300 text-lg leading-relaxed italic">
+              "Khách hàng nói gì về hiệu quả phục hồi tại Ái Xuân?"
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-            {gallery.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group rounded-2xl overflow-hidden aspect-[4/5] shadow-lg bg-white/5 border border-white/10"
-              >
-                <img 
-                  src={item.src} 
-                  alt="Ảnh thực chiến" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                
-                {item.testimonial && (
-                  <>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgb(11,19,43)]/90 via-[rgb(11,19,43)]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl">
-                        <p className="text-white text-xs leading-snug italic">
-                          {item.testimonial}
-                        </p>
-                      </div>
-                    </div>
-                  </>
-                )}
-                {!item.testimonial && (
-                  <div className="absolute inset-0 bg-[#0B132B]/20 group-hover:bg-transparent transition-colors duration-500"></div>
-                )}
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {/* Review Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark"
+            >
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-[#FF6B35]/20" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=100" alt="VĐV" className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h4 className="font-bold">Anh Tú (VĐV Pickleball)</h4>
+                  <div className="flex text-[#FF6B35] text-sm">
+                    ★ ★ ★ ★ ★
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed italic">
+                "Hôm trước giải bị căng cơ đùi sau, tưởng bỏ thi đấu rồi. Cảm ơn Ái Xuân đã nắn chỉnh và dùng máy sinh học. Đúng 30 phút sau chạy ầm ầm trên sân. Quá uy tín!"
+              </p>
+            </motion.div>
+
+            {/* Zalo Message Mockup */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-[#E5E5EA] rounded-2xl p-4 shadow-xl flex flex-col justify-end min-h-[200px]"
+            >
+              <div className="bg-white rounded-[1.2rem] rounded-tl-sm px-4 py-3 max-w-[85%] shadow-sm mb-3">
+                <p className="text-[15px] text-text-dark">Chị ơi, tay em hnay gõ phím ngon lành ròi. K bị buốt tận nách như hôm thi đấu nữa. Thứ 7 em qua bảo dưỡng lại nha ❤️</p>
+                <span className="text-[10px] text-gray-400 mt-1 block">09:42</span>
+              </div>
+              <div className="bg-[#0084FF] text-white rounded-[1.2rem] rounded-tr-sm px-4 py-3 max-w-[85%] self-end shadow-sm">
+                <p className="text-[15px]">Ok em, nhớ uống đủ nước và đừng khởi động sai cách nữa nhé!</p>
+                <span className="text-[10px] text-white/70 mt-1 block text-right">09:45</span>
+              </div>
+            </motion.div>
+
+            {/* Review Card 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark"
+            >
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-[#FF6B35]/20" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" alt="Chị Phương" className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h4 className="font-bold">Chị Hà (Bán chuyên)</h4>
+                  <div className="flex text-[#FF6B35] text-sm">
+                    ★ ★ ★ ★ ★
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed italic">
+                "Đánh xong giải đau nhức toàn thân, qua bên Xuân làm một buổi xong về ngủ ngon tới sáng. Chỗ này không chỉ phục hồi mà còn tư vấn cách ăn uống rất kỹ."
+              </p>
+            </motion.div>
+
+             {/* Zalo Message Mockup 2 */}
+             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-[#E5E5EA] rounded-2xl p-4 shadow-xl flex flex-col justify-end min-h-[200px]"
+            >
+               <div className="bg-white rounded-[1.2rem] rounded-tl-sm px-4 py-3 max-w-[85%] shadow-sm mb-3">
+                <p className="text-[15px] text-text-dark">Xuân ơi team chị vô địch giải hôm nay ròi nha 😍 Nhờ Xuân ở ngoài canh chuột rút mà mấy bà tự tin quất tới bến luôn kkk</p>
+                <span className="text-[10px] text-gray-400 mt-1 block">18:15</span>
+              </div>
+               <div className="bg-[#0084FF] text-white rounded-[1.2rem] rounded-tr-sm px-4 py-3 max-w-[85%] self-end shadow-sm">
+                <p className="text-[15px]">Chúc mừng team chị yêu nha 🎉🎉 Tối nay nhớ giãn cơ kỹ nhé!</p>
+                <span className="text-[10px] text-white/70 mt-1 block text-right">18:16</span>
+              </div>
+            </motion.div>
+            
+             {/* Review Card 3 */}
+             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark"
+            >
+               <Quote className="absolute top-4 right-4 w-8 h-8 text-[#FF6B35]/20" />
+               <div className="flex items-center gap-3 mb-4">
+                 <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500 text-xl font-serif">
+                   <span className="uppercase text-amber-600 text-lg">BTC</span>
+                 </div>
+                 <div>
+                   <h4 className="font-bold">Ban Tổ Chức Giải Đấu</h4>
+                   <div className="flex text-[#FF6B35] text-sm">
+                     ★ ★ ★ ★ ★
+                   </div>
+                 </div>
+               </div>
+               <p className="text-sm text-gray-600 leading-relaxed italic">
+                 "Từ ngày có team y tế của Ái Xuân đồng hành, BTC hoàn toàn an tâm. VĐV có sự cố trên sân là được hỗ trợ chuyên nghiệp liền. Sẽ tiếp tục hợp tác dài hạn!"
+               </p>
+             </motion.div>
+
+             {/* Review Card 4 / Image */}
+             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark overflow-hidden flex flex-col justify-center items-center h-full min-h-[200px]"
+              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80")', backgroundSize: 'cover', backgroundPosition: 'center' }}
+            >
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+              <div className="relative z-10 text-center">
+                <Quote className="w-10 h-10 text-[#FF6B35] opacity-80 mx-auto mb-3" />
+                <p className="text-white font-medium italic">"100% Khách hàng hài lòng với dịch vụ phục hồi cấp tốc."</p>
+              </div>
+            </motion.div>
           </div>
 
           <div className="text-center">
@@ -298,9 +517,9 @@ export default function InAction() {
               href="https://zalo.me/0938614687" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-coral hover:bg-[#e86b4f] text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl font-bold text-lg lg:text-xl transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(242,124,98,0.3)] hover:shadow-[0_20px_40px_rgba(242,124,98,0.4)]"
+              className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl font-bold text-lg lg:text-xl uppercase tracking-wider transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:shadow-[0_20px_40px_rgba(255,107,53,0.4)]"
             >
-              Đặt lịch chăm sóc & phục hồi thể lực
+              Đặt lịch phục hồi ngay
             </a>
           </div>
         </div>

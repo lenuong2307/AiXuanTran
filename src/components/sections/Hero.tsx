@@ -37,14 +37,14 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-8 w-full max-w-[540px]">
               <a 
                 href="#services" 
-                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-coral text-white rounded-full font-semibold hover:bg-coral-light transition-all shadow-lg shadow-coral/30 text-[14px] xl:text-base whitespace-nowrap"
+                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-[#FF6B35] hover:bg-[#e85d26] text-white rounded-full font-bold transition-all shadow-[0_10px_20px_rgba(255,107,53,0.3)] text-[14px] xl:text-base whitespace-nowrap uppercase tracking-wider"
               >
-                Đặt lịch chăm sóc cá nhân
+                Đặt lịch phục hồi ngay
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
               </a>
               <a 
                 href="#services" 
-                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-transparent text-forest border-2 border-forest rounded-full font-semibold hover:bg-forest hover:text-white transition-all text-[14px] xl:text-base whitespace-nowrap"
+                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-transparent text-sage border-2 border-sage rounded-full font-semibold hover:bg-sage hover:text-white transition-all text-[14px] xl:text-base whitespace-nowrap"
               >
                 Mời đồng hành giải đấu
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
@@ -86,6 +86,8 @@ export default function Hero() {
                 alt="Chuyên gia xoa bóp bấm huyệt thể thao" 
                 className="w-full h-full object-cover rounded-2xl"
               />
+              {/* Overlay #5F7F6B as requested - modified with radial-gradient to highlight subjects in the center */}
+              <div className="absolute inset-x-3 inset-y-3 sm:inset-x-5 sm:inset-y-5 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(95,127,107,0.4)_100%)] pointer-events-none rounded-2xl"></div>
               <div className="absolute inset-x-3 inset-y-3 sm:inset-x-5 sm:inset-y-5 bg-gradient-to-t from-forest/80 via-transparent to-transparent pointer-events-none rounded-2xl"></div>
               
               <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 z-10">
