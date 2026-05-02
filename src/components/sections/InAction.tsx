@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Trophy, CheckCircle2, PlayCircle, Quote } from 'lucide-react';
+import { Trophy, CheckCircle2, PlayCircle, Quote, ExternalLink } from 'lucide-react';
 
 const logos = [
   "Giải CLB AKCLUB tại An Khê",
@@ -147,6 +147,82 @@ export default function InAction() {
               ))}
             </div>
           </div>
+
+          {/* Press Feature */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto mt-12 bg-white/5 rounded-[2rem] border border-white/10 p-6 sm:p-10 relative overflow-hidden"
+          >
+            {/* Background Decor for Press Feature */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-600/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center relative z-10">
+              <div className="flex-1 space-y-6">
+                <div className="bg-red-600 w-fit px-4 py-2 rounded-lg mb-4 flex items-center gap-2">
+                  <span className="text-white font-bold tracking-widest text-sm uppercase">Báo Lao Động</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white uppercase tracking-wide leading-snug">
+                  GÓP MẶT TẠI CÁC SỰ KIỆN QUY MÔ - BẢO CHỨNG BỞI TRUYỀN THÔNG ĐẠI CHÚNG
+                </h3>
+                <p className="text-gray-300 text-base lg:text-lg leading-relaxed text-justify">
+                  "Không chỉ đồng hành cùng các giải đấu phong trào, Ái Xuân Trần tự hào là đối tác chăm sóc thể lực tại các sự kiện thể thao tầm cỡ, mang ý nghĩa lớn của Thành phố.
+                </p>
+                <p className="text-gray-300 text-base lg:text-lg leading-relaxed text-justify">
+                  Tại Hội thao chào mừng Đại hội đại biểu Đảng bộ TPHCM (Giải Pickleball Dinknutrition Open) do Sở Văn hóa và Thể thao TPHCM tổ chức với hơn 200 vận động viên tranh tài, Ái Xuân đã túc trực sát sao tại thảm đấu. Sự thành công rực rỡ của giải, nơi các VĐV thi đấu thăng hoa và an toàn, đã được báo chí và các cơ quan truyền thông lớn (như Báo Lao Động) ghi nhận."
+                </p>
+                
+                <div className="bg-gradient-to-r from-red-600/10 to-transparent p-5 rounded-2xl border-l-[6px] border-red-600">
+                  <p className="text-gray-200 text-base md:text-lg italic font-medium leading-relaxed">
+                    "Giải Pickleball quy tụ hơn 200 vận động viên, tạo sân chơi mới mẻ, hấp dẫn... cho thấy sự đồng hành tích cực của doanh nghiệp và cộng đồng trong việc phát triển phong trào thể dục thể thao"
+                  </p>
+                  <p className="text-red-400 text-sm mt-3 font-bold uppercase tracking-wider">- Nguồn: Báo Lao Động</p>
+                </div>
+
+                <a 
+                  href="https://laodong.vn/the-thao/soi-noi-hoi-thao-chao-mung-dai-hoi-dai-bieu-dang-bo-tphcm-nhiem-ki-2025-2030-1590375.ldo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-red-500 hover:text-red-400 font-bold transition-all hover:gap-3"
+                >
+                  Đọc toàn bộ bài viết trên báo Lao Động
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
+              
+              <div className="flex-1 w-full relative">
+                <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl relative group bg-[#0B132B]">
+                  {/* Mockup of an article screen */}
+                  <div className="bg-white p-4">
+                    <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
+                      <div className="text-red-600 font-bold text-xl uppercase font-serif tracking-tighter">Lao Động</div>
+                      <div className="flex gap-2">
+                        <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                        <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                        <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+                      </div>
+                    </div>
+                    <img 
+                      src="https://images.unsplash.com/photo-1622599511051-16fd808eec97?auto=format&fit=crop&q=80" 
+                      alt="Tranh tài Pickleball" 
+                      className="w-full h-auto rounded-lg mb-4" 
+                    />
+                    <h4 className="text-gray-900 font-bold text-xl md:text-2xl leading-snug mb-3">
+                      Sôi nổi Hội thao chào mừng Đại hội đại biểu Đảng bộ TPHCM nhiệm kì 2025-2030
+                    </h4>
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                      Giải Pickleball quy tụ hơn 200 vận động viên tham gia tranh tài trong khuôn khổ Hội thao chào mừng Đại hội đại biểu Đảng bộ TPHCM. Sự kiện được tổ chức chuyên nghiệp với sự hỗ trợ y tế và phục hồi xuất sắc...
+                    </p>
+                  </div>
+
+                  {/* Red highlight circle overlay simulation if needed, but since it's a dynamic image we might just use CSS */}
+                  <div className="absolute top-1/2 left-3/4 w-12 h-12 border-2 border-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-ping opacity-50"></div>
+                  <div className="absolute top-1/2 left-3/4 w-12 h-12 border-2 border-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Video Highlights */}
           <motion.div 
