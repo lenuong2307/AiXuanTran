@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><a href="#story" className="text-white/70 hover:text-white transition-colors text-sm">Về Ái Xuân Trần</a></li>
               <li><a href="#approach" className="text-white/70 hover:text-white transition-colors text-sm">Phương pháp phục hồi</a></li>
-              <li><a href="#in-action" className="text-white/70 hover:text-white transition-colors text-sm">Khách hàng nói gì</a></li>
+              <li><a href="#testimonials" className="text-white/70 hover:text-white transition-colors text-sm">Khách hàng nói gì</a></li>
               <li><a href="#faq" className="text-white/70 hover:text-white transition-colors text-sm">Câu hỏi thường gặp</a></li>
             </ul>
           </div>

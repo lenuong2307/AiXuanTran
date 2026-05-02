@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Activity } from 'lucide-react';
+import { Menu, X, Activity, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Navbar() {
@@ -45,10 +45,11 @@ export default function Navbar() {
               </a>
             ))}
             <a 
-              href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-full bg-coral text-white text-sm font-medium hover:bg-coral-light transition-all shadow-lg hover:shadow-coral/30"
+              href="tel:0938614687"
+              className="flex items-center gap-1.5 px-5 py-2.5 rounded-full text-white text-sm font-bold tracking-wide transition-all border border-transparent hover:bg-white/10"
             >
-              Đặt lịch ngay
+              <Phone className="w-4 h-4" />
+              0938614687
             </a>
           </nav>
 
@@ -83,11 +84,12 @@ export default function Navbar() {
                 </a>
               ))}
               <a 
-                href="https://zalo.me/0938614687" target="_blank" rel="noopener noreferrer"
-                className="mt-4 px-5 py-3 text-center rounded-lg bg-coral text-white font-medium shadow-md shadow-coral/20"
+                href="tel:0938614687"
+                className="mt-4 px-5 py-3 flex justify-center items-center gap-2 rounded-lg text-white font-bold tracking-wide border border-white/10 hover:bg-white/5 shadow-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Đặt lịch chăm sóc ngay
+                <Phone className="w-5 h-5" />
+                0938614687
               </a>
             </div>
           </motion.div>

@@ -438,7 +438,7 @@ export default function InAction() {
           </motion.div>
 
           {/* Reel-style Video Library */}
-          <div className="mt-24 pt-12 border-t border-white/10">
+          <div id="testimonials" className="mt-24 pt-12 border-t border-white/10 scroll-mt-24">
             <div className="text-center max-w-4xl mx-auto mb-10 px-4">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 text-[#FF6B35] uppercase tracking-wide leading-snug">
                 CHUYÊN MÔN ĐƯỢC CHỨNG MINH BẰNG NHỮNG KHOẢNH KHẮC THỰC TẾ
