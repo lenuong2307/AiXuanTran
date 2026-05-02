@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Trophy, CheckCircle2, PlayCircle, Quote, ExternalLink } from 'lucide-react';
 
 const logos = [
@@ -108,6 +108,18 @@ function ReelCard({ item }: { item: any }) {
 }
 
 export default function InAction() {
+  const [currentChampionIndex, setCurrentChampionIndex] = useState(0);
+  const championImages = [
+    "https://i.postimg.cc/YS43mWMB/z7781678858930-b375f747edc0cbc223373494ef9a50a9.jpg",
+    "https://i.postimg.cc/br0Lwf8c/z7782973594006-8837e9064fefb300ed79a1f08e171d8b.jpg"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentChampionIndex((prev) => (prev + 1) % championImages.length);
+    }, 4000); // Change image every 4 seconds
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section id="in-action" className="py-12 lg:py-16 bg-[#2F5D50] text-white overflow-hidden relative">
       {/* Background Decors */}
@@ -162,7 +174,7 @@ export default function InAction() {
           <div className="w-px h-16 bg-white/10 hidden md:block"></div>
           <div className="flex flex-col items-center">
             <span className="text-4xl md:text-5xl font-black text-[#FF6B35]">100%</span>
-            <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-2">Hồi Phục Tức Thì</span>
+            <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-2">Chuyên nghiệp, tận tâm, hiệu quả</span>
           </div>
         </motion.div>
 
@@ -193,16 +205,23 @@ export default function InAction() {
           className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center bg-white/5 rounded-[2.5rem] border border-white/10 p-6 lg:p-12"
         >
           <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 group">
-            <img 
-              src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80" 
-              alt="Nhà vô địch" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2F5D50]/80 to-transparent"></div>
+            <AnimatePresence mode="wait">
+              <motion.img 
+                key={currentChampionIndex}
+                src={championImages[currentChampionIndex]} 
+                alt={`Nhà vô địch ${currentChampionIndex + 1}`} 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2F5D50]/80 via-transparent to-transparent"></div>
             <div className="absolute bottom-6 left-6 right-6">
-              <div className="flex items-center gap-3 text-[#FF6B35] font-bold uppercase tracking-widest text-sm mb-2">
-                <Trophy className="w-5 h-5" />
-                Câu Chuyện Thành Công
+              <div className="flex items-center gap-2 sm:gap-3 text-[#FF6B35] font-bold uppercase tracking-wider sm:tracking-widest text-[11px] sm:text-sm mb-2">
+                <Trophy className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                Chúc mừng nhà vô địch
               </div>
             </div>
           </div>
@@ -212,7 +231,7 @@ export default function InAction() {
               "Đằng sau mỗi chiếc cúp, là sự bền bỉ của cơ bắp."
             </h3>
             <p className="text-gray-300 text-base lg:text-lg leading-relaxed text-justify">
-              "Trong một giải đấu căng thẳng, thể lực chính là vũ khí quyết định. Rất tự hào khi phương pháp phục hồi của Ái Xuân đã trực tiếp xoa dịu những bó cơ quá tải, giúp VĐV tự tin bước vào trận chung kết với phong độ đỉnh cao và xuất sắc giành Ngôi Vô Địch. Thành tích của họ trên sân chính là tấm huy chương quý giá nhất cho phương pháp của tôi."
+              "Trong một giải đấu căng thẳng, thể lực chính là vũ khí quyết định. Rất tự hào khi phương pháp phục hồi của Ái Xuân Trần đã trực tiếp xoa dịu những bó cơ quá tải, giúp VĐV tự tin bước vào trận chung kết với phong độ đỉnh cao và xuất sắc giành <span className="text-[#FF6B35] font-bold">Ngôi Vô Địch</span>. Thành tích của bạn trên sân chính là tấm huy chương quý giá nhất cho phương pháp của tôi."
             </p>
           </div>
         </motion.div>
@@ -224,13 +243,14 @@ export default function InAction() {
               GIẢI CỨU KỊP THỜI - NÂNG TẦM GIẢI ĐẤU
             </h3>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              "Không chỉ là phục hồi cá nhân, Ái Xuân Trần vinh dự là đối tác y tế/chăm sóc thể lực được các Ban tổ chức và Chủ sân Pickleball tin tưởng 'chọn mặt gửi vàng'."
+              "Không chỉ là phục hồi cá nhân, Ái Xuân Trần vinh dự là đối tác chăm sóc thể lực được các Ban tổ chức và Chủ sân Pickleball tin tưởng 'chọn mặt gửi vàng'."
             </p>
             <ul className="grid sm:grid-cols-2 gap-4 text-left mb-8 max-w-3xl mx-auto">
               {[
                 "Xử lý tức thì các tình huống căng cơ, chuột rút ngay tại mép sân.",
-                "Mang đến sự an tâm tuyệt đối cho các VĐV thi đấu.",
-                "Tạo điểm nhấn chuyên nghiệp, gia tăng giá trị cho mọi giải đấu."
+                "Bù đắp vi khoáng và dưỡng chất tiêu hao sau khi vã mồ hôi trên sân. Hỗ trợ phục hồi thể lực nhanh chóng.",
+                "Tạo điểm nhấn chuyên nghiệp, gia tăng giá trị cho mọi giải đấu.",
+                "Mang đến sự an tâm tuyệt đối cho các VĐV thi đấu."
               ].map((item, i) => (
                 <li key={i} className="flex gap-3 items-start bg-white/5 p-4 rounded-xl border border-white/5">
                   <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
