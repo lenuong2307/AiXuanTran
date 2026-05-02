@@ -107,6 +107,89 @@ function ReelCard({ item }: { item: any }) {
   );
 }
 
+function FeedbackCarousel() {
+  const baseImages = [
+    "https://i.postimg.cc/4Nyq1w6p/FB0.jpg",
+    "https://i.postimg.cc/YqSwFH2D/FB1.jpg",
+    "https://i.postimg.cc/MpCkgf0z/FB3.jpg",
+    "https://i.postimg.cc/LXSc8d0N/FB4.jpg",
+    "https://i.postimg.cc/HWBqdh0c/FB5.jpg",
+    "https://i.postimg.cc/9Fksqwnt/FB6.jpg",
+    "https://i.postimg.cc/5tdGsd1v/FB7.jpg"
+  ];
+  
+  // Clone 50 times to create a virtually infinite scrolling experience
+  const images = Array(50).fill(baseImages).flat();
+  
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const [isAutoPlaying, setIsAutoPlaying] = React.useState(true);
+
+  React.useEffect(() => {
+    // Start somewhere in the middle so user can scroll left or right immediately
+    if (scrollRef.current) {
+        // approximate width calculation to set to middle
+        const singleSetWidth = 7 * 280; // approx width + gap
+        scrollRef.current.scrollLeft = singleSetWidth * 25;
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        // get exact width of one item + gap dynamically to scroll exactly one item
+        const itemElement = scrollRef.current.children[0] as HTMLElement;
+        const itemWidth = itemElement?.clientWidth || 250;
+        const gap = 24; // typical gap spacing (sm:gap-6 which is 24px)
+        scrollRef.current.scrollBy({ left: itemWidth + gap, behavior: 'smooth' });
+      }
+    }, 1500);
+    
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    setIsAutoPlaying(false);
+    if (scrollRef.current) {
+       const itemElement = scrollRef.current.children[0] as HTMLElement;
+       const itemWidth = itemElement?.clientWidth || 250;
+       const gap = 24;
+       const scrollAmount = direction === 'left' ? -(itemWidth + gap) : (itemWidth + gap);
+       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="relative w-full max-w-6xl mx-auto mb-16 px-10 sm:px-16" onMouseEnter={() => setIsAutoPlaying(false)} onMouseLeave={() => setIsAutoPlaying(true)}>
+      <button 
+        onClick={() => handleScroll('left')}
+        className="absolute left-0 lg:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-[#FF6B35] group p-3 sm:p-4 rounded-full backdrop-blur-sm transition-all border border-white/20 text-white shadow-xl hover:scale-110"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-0.5 transition-transform"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
+      <div 
+        ref={scrollRef}
+        className="flex overflow-x-auto gap-4 sm:gap-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-2 py-4"
+      >
+        {images.map((img, index) => (
+          <div key={index} className="w-[180px] sm:w-[220px] lg:w-[260px] shrink-0 snap-center rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 transition-transform hover:scale-[1.02]">
+            <img src={img} alt={`Feedback ${index}`} className="w-full h-auto object-cover pointer-events-none" />
+          </div>
+        ))}
+      </div>
+
+      <button 
+        onClick={() => handleScroll('right')}
+        className="absolute right-0 lg:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-[#FF6B35] group p-3 sm:p-4 rounded-full backdrop-blur-sm transition-all border border-white/20 text-white shadow-xl hover:scale-110"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  );
+}
+
 export default function InAction() {
   const [currentChampionIndex, setCurrentChampionIndex] = useState(0);
   const championImages = [
@@ -321,7 +404,7 @@ export default function InAction() {
                     />
                     
                     {/* Continuous radiating red circle effect */}
-                    <div className="absolute top-[28%] right-[15%] w-10 h-10 lg:w-14 lg:h-14 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+                    <div className="absolute top-[26%] right-[27%] w-8 h-8 lg:w-10 lg:h-10 rounded-full transform translate-x-[50%] -translate-y-[50%] z-20 pointer-events-none">
                       <div className="absolute inset-0 border-2 border-red-500 rounded-full animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
                       <div 
                         className="absolute inset-0 border-2 border-red-600 rounded-full animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"
@@ -402,133 +485,7 @@ export default function InAction() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {/* Review Card 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark"
-            >
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-[#FF6B35]/20" />
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=100" alt="VĐV" className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Anh Tú (VĐV Pickleball)</h4>
-                  <div className="flex text-[#FF6B35] text-sm">
-                    ★ ★ ★ ★ ★
-                  </div>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed italic">
-                "Hôm trước giải bị căng cơ đùi sau, tưởng bỏ thi đấu rồi. Cảm ơn Ái Xuân đã nắn chỉnh và dùng máy sinh học. Đúng 30 phút sau chạy ầm ầm trên sân. Quá uy tín!"
-              </p>
-            </motion.div>
-
-            {/* Zalo Message Mockup */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-[#E5E5EA] rounded-2xl p-4 shadow-xl flex flex-col justify-end min-h-[200px]"
-            >
-              <div className="bg-white rounded-[1.2rem] rounded-tl-sm px-4 py-3 max-w-[85%] shadow-sm mb-3">
-                <p className="text-[15px] text-text-dark">Chị ơi, tay em hnay gõ phím ngon lành ròi. K bị buốt tận nách như hôm thi đấu nữa. Thứ 7 em qua bảo dưỡng lại nha ❤️</p>
-                <span className="text-[10px] text-gray-400 mt-1 block">09:42</span>
-              </div>
-              <div className="bg-[#0084FF] text-white rounded-[1.2rem] rounded-tr-sm px-4 py-3 max-w-[85%] self-end shadow-sm">
-                <p className="text-[15px]">Ok em, nhớ uống đủ nước và đừng khởi động sai cách nữa nhé!</p>
-                <span className="text-[10px] text-white/70 mt-1 block text-right">09:45</span>
-              </div>
-            </motion.div>
-
-            {/* Review Card 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark"
-            >
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-[#FF6B35]/20" />
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" alt="Chị Phương" className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Chị Hà (Bán chuyên)</h4>
-                  <div className="flex text-[#FF6B35] text-sm">
-                    ★ ★ ★ ★ ★
-                  </div>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed italic">
-                "Đánh xong giải đau nhức toàn thân, qua bên Xuân làm một buổi xong về ngủ ngon tới sáng. Chỗ này không chỉ phục hồi mà còn tư vấn cách ăn uống rất kỹ."
-              </p>
-            </motion.div>
-
-             {/* Zalo Message Mockup 2 */}
-             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-[#E5E5EA] rounded-2xl p-4 shadow-xl flex flex-col justify-end min-h-[200px]"
-            >
-               <div className="bg-white rounded-[1.2rem] rounded-tl-sm px-4 py-3 max-w-[85%] shadow-sm mb-3">
-                <p className="text-[15px] text-text-dark">Xuân ơi team chị vô địch giải hôm nay ròi nha 😍 Nhờ Xuân ở ngoài canh chuột rút mà mấy bà tự tin quất tới bến luôn kkk</p>
-                <span className="text-[10px] text-gray-400 mt-1 block">18:15</span>
-              </div>
-               <div className="bg-[#0084FF] text-white rounded-[1.2rem] rounded-tr-sm px-4 py-3 max-w-[85%] self-end shadow-sm">
-                <p className="text-[15px]">Chúc mừng team chị yêu nha 🎉🎉 Tối nay nhớ giãn cơ kỹ nhé!</p>
-                <span className="text-[10px] text-white/70 mt-1 block text-right">18:16</span>
-              </div>
-            </motion.div>
-            
-             {/* Review Card 3 */}
-             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark"
-            >
-               <Quote className="absolute top-4 right-4 w-8 h-8 text-[#FF6B35]/20" />
-               <div className="flex items-center gap-3 mb-4">
-                 <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500 text-xl font-serif">
-                   <span className="uppercase text-amber-600 text-lg">BTC</span>
-                 </div>
-                 <div>
-                   <h4 className="font-bold">Ban Tổ Chức Giải Đấu</h4>
-                   <div className="flex text-[#FF6B35] text-sm">
-                     ★ ★ ★ ★ ★
-                   </div>
-                 </div>
-               </div>
-               <p className="text-sm text-gray-600 leading-relaxed italic">
-                 "Từ ngày có team y tế của Ái Xuân đồng hành, BTC hoàn toàn an tâm. VĐV có sự cố trên sân là được hỗ trợ chuyên nghiệp liền. Sẽ tiếp tục hợp tác dài hạn!"
-               </p>
-             </motion.div>
-
-             {/* Review Card 4 / Image */}
-             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="bg-white rounded-2xl p-6 shadow-xl relative text-text-dark overflow-hidden flex flex-col justify-center items-center h-full min-h-[200px]"
-              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80")', backgroundSize: 'cover', backgroundPosition: 'center' }}
-            >
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-              <div className="relative z-10 text-center">
-                <Quote className="w-10 h-10 text-[#FF6B35] opacity-80 mx-auto mb-3" />
-                <p className="text-white font-medium italic">"100% Khách hàng hài lòng với dịch vụ phục hồi cấp tốc."</p>
-              </div>
-            </motion.div>
-          </div>
+          <FeedbackCarousel />
 
           <div className="text-center">
             <a 
