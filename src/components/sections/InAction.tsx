@@ -128,9 +128,9 @@ export default function InAction() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 pt-2 leading-[1.2]"
+          className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-6 pt-2 leading-[1.4] sm:leading-[1.4] lg:leading-[1.3]"
         >
-          TỪ PHÒNG PHỤC HỒI ĐẾN THẢM ĐẤU: <br className="hidden md:block" />
+          <span className="block mb-3 sm:mb-4">TỪ PHÒNG PHỤC HỒI ĐẾN THẢM ĐẤU</span>
           <span className="text-[#FF6B35]">BẢO CHỨNG THỂ LỰC</span> CHO NHỮNG NHÀ VÔ ĐỊCH
         </motion.h2>
         <motion.p 
@@ -140,7 +140,7 @@ export default function InAction() {
           transition={{ delay: 0.2 }}
           className="text-gray-300 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed"
         >
-          Đồng hành cùng các giải đấu lớn nhỏ – Nơi năng lực của 'Chuyên gia bắt chuột' được minh chứng bằng thực tế.
+          Đồng hành cùng các giải đấu lớn nhỏ – Nơi năng lực của <span className="whitespace-nowrap">'Chuyên gia bắt chuột'</span> <br className="hidden sm:block" /> được minh chứng bằng thực tế.
         </motion.p>
 
         <motion.div 

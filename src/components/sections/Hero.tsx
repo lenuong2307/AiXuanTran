@@ -63,7 +63,7 @@ export default function Hero() {
                   />
                 ))}
                 <div className="w-10 h-10 rounded-full border-2 border-cream bg-forest flex justify-center items-center text-white text-xs font-bold shrink-0">
-                  100+
+                  500+
                 </div>
               </div>
               <p className="text-sm text-text-body font-medium sm:whitespace-nowrap">

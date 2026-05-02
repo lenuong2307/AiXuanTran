@@ -63,7 +63,7 @@ export default function Approach() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[clamp(13px,3.5vw,40px)] sm:text-[clamp(16px,2.8vw,40px)] md:text-[clamp(20px,2.5vw,40px)] lg:text-[40px] font-heading font-bold mb-6 pt-2 leading-[1.2] tracking-tight sm:tracking-normal"
+            className="text-[clamp(10px,3.2vw,40px)] sm:text-[clamp(16px,2.8vw,40px)] md:text-[clamp(20px,2.5vw,40px)] lg:text-[40px] font-heading font-bold mb-6 pt-2 leading-[1.2] tracking-tighter md:tracking-normal whitespace-nowrap"
           >
             <span className="text-[#FF6B35]">KẾT HỢP TINH HOA</span> ĐÔNG Y, CÔNG NGHỆ <span className="font-['Times_New_Roman']">&amp;</span> THỰC DƯỠNG
           </motion.h2>
