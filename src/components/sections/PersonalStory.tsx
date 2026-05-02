@@ -91,7 +91,7 @@ export default function PersonalStory() {
             <div className="mt-10 flex justify-end">
               <a 
                 href="#services" 
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF6B35] text-white rounded-full font-bold uppercase tracking-wider hover:bg-[#e85d26] transition-all shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:scale-105 active:scale-95"
+                className="inline-flex justify-center items-center gap-2 px-6 sm:px-8 py-4 w-full sm:w-auto bg-[#FF6B35] text-white rounded-full font-bold uppercase tracking-wider text-[13px] sm:text-base hover:bg-[#e85d26] transition-all shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:scale-105 active:scale-95 text-center"
               >
                 Nhận tư vấn cho VĐV Pickleball
               </a>

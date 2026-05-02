@@ -45,10 +45,10 @@ export default function FinalCTA() {
             href="https://zalo.me/0938614687" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#2F5D50] hover:bg-black text-white px-8 lg:px-12 py-4 lg:py-5 rounded-full font-black text-lg lg:text-xl uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+            className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#2F5D50] hover:bg-black text-white w-full sm:w-auto px-4 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-full font-black text-[13px] sm:text-lg lg:text-xl text-center uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
-            NHẬN TƯ VẤN & ĐẶT LỊCH ƯU TIÊN NGAY
-            <ArrowRight className="w-6 h-6 shrink-0" />
+            NHẬN TƯ VẤN <span className="font-['Times_New_Roman']">&amp;</span> ĐẶT LỊCH ƯU TIÊN NGAY
+            <ArrowRight className="w-4 h-4 sm:w-6 sm:h-6 shrink-0" />
           </a>
         </motion.div>
       </div>

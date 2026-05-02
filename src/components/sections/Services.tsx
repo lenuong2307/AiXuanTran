@@ -29,7 +29,7 @@ export default function Services() {
               <User className="w-7 h-7" />
             </div>
             
-            <h3 className="text-2xl font-heading font-bold text-text-dark mb-2">Chăm Sóc & Phục Hồi Cá Nhân</h3>
+            <h3 className="text-2xl font-heading font-bold text-text-dark mb-2">Chăm Sóc <span className="font-['Times_New_Roman']">&amp;</span> Phục Hồi Cá Nhân</h3>
             <p className="text-text-body mb-8">Dành cho VĐV, người chơi phong trào cần lấy lại thể trạng nhanh chóng.</p>
             
             <ul className="space-y-4 mb-8 flex-grow">
@@ -47,7 +47,7 @@ export default function Services() {
               </li>
               <li className="flex items-start gap-3 text-text-dark">
                 <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                <span>Tư vấn dinh dưỡng & bài tập phòng ngừa</span>
+                <span>Tư vấn dinh dưỡng <span className="font-['Times_New_Roman']">&amp;</span> bài tập phòng ngừa</span>
               </li>
             </ul>
             

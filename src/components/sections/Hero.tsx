@@ -26,8 +26,8 @@ export default function Hero() {
             
             <h1 className="text-[28px] min-[375px]:text-[34px] sm:text-5xl lg:text-6xl font-bold font-heading text-text-dark leading-[1.25] mb-6 tracking-tight">
               ÁI XUÂN TRẦN <br/>
-              <span className="text-gradient whitespace-nowrap text-[6vw] min-[375px]:text-[28px] min-[400px]:text-[30px] sm:text-5xl lg:text-6xl">"Chuyên gia Bắt chuột"</span> <br/>
-              & Phục Hồi Thể Lực
+              <span className="text-gradient sm:whitespace-nowrap text-[6vw] min-[375px]:text-[28px] min-[400px]:text-[30px] sm:text-5xl lg:text-6xl">"Chuyên gia Bắt chuột"</span> <br/>
+              <span className="font-['Times_New_Roman']">&amp;</span> Phục Hồi Thể Lực
             </h1>
             
             <p className="text-base sm:text-lg text-text-body mb-8 max-w-xl font-sans leading-relaxed">
@@ -37,14 +37,14 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-8 w-full max-w-[540px]">
               <a 
                 href="#services" 
-                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-[#FF6B35] hover:bg-[#e85d26] text-white rounded-full font-bold transition-all shadow-[0_10px_20px_rgba(255,107,53,0.3)] text-[14px] xl:text-base whitespace-nowrap uppercase tracking-wider"
+                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-[#FF6B35] hover:bg-[#e85d26] text-white rounded-full font-bold transition-all shadow-[0_10px_20px_rgba(255,107,53,0.3)] text-[13px] sm:text-[14px] xl:text-base sm:whitespace-nowrap uppercase tracking-wider"
               >
                 Đặt lịch phục hồi ngay
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
               </a>
               <a 
                 href="#services" 
-                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-transparent text-sage border-2 border-sage rounded-full font-semibold hover:bg-sage hover:text-white transition-all text-[14px] xl:text-base whitespace-nowrap"
+                className="flex-1 inline-flex justify-center items-center gap-1.5 sm:gap-2 px-4 lg:px-3 xl:px-6 py-3.5 bg-transparent text-sage border-2 border-sage rounded-full font-semibold hover:bg-sage hover:text-white transition-all text-[13px] sm:text-[14px] xl:text-base sm:whitespace-nowrap"
               >
                 Mời đồng hành giải đấu
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
@@ -66,7 +66,7 @@ export default function Hero() {
                   100+
                 </div>
               </div>
-              <p className="text-sm text-text-body font-medium whitespace-nowrap">
+              <p className="text-sm text-text-body font-medium sm:whitespace-nowrap">
                 Vận động viên đã phục hồi thành công.
               </p>
             </div>

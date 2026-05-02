@@ -176,7 +176,7 @@ export default function InAction() {
             href="https://zalo.me/0938614687" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-wider text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)]"
+            className="inline-flex items-center justify-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold uppercase tracking-wider text-[13px] sm:text-sm text-center transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)]"
           >
             Đăng ký chăm sóc thi đấu
           </a>
@@ -206,9 +206,9 @@ export default function InAction() {
               </div>
             </div>
           </div>
-          <div className="space-y-6 border-l-[6px] border-[#FF6B35] pl-6 bg-white/5 py-4 rounded-r-2xl">
+          <div className="space-y-6 border-l-[6px] border-[#FF6B35] pl-6 pr-4 sm:pr-6 bg-white/5 py-6 rounded-r-2xl break-words">
             <Quote className="w-10 h-10 text-[#FF6B35] opacity-80" />
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold italic text-white/90">
+            <h3 className="text-xl sm:text-2xl font-heading font-bold italic text-white/90">
               "Đằng sau mỗi chiếc cúp, là sự bền bỉ của cơ bắp."
             </h3>
             <p className="text-gray-300 text-base lg:text-lg leading-relaxed text-justify">
@@ -242,7 +242,7 @@ export default function InAction() {
               href="https://zalo.me/0938614687" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-wider text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)]"
+              className="inline-flex items-center justify-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold uppercase tracking-wider text-[13px] sm:text-sm text-center transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)]"
             >
               Mời Ái Xuân đồng hành giải đấu
             </a>
@@ -517,7 +517,7 @@ export default function InAction() {
               href="https://zalo.me/0938614687" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl font-bold text-lg lg:text-xl uppercase tracking-wider transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:shadow-[0_20px_40px_rgba(255,107,53,0.4)]"
+              className="inline-flex items-center justify-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-4 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 w-full sm:w-auto rounded-2xl font-bold text-[13px] sm:text-lg lg:text-xl uppercase tracking-wider text-center transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:shadow-[0_20px_40px_rgba(255,107,53,0.4)]"
             >
               Đặt lịch phục hồi ngay
             </a>

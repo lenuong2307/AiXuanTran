@@ -6,7 +6,7 @@ const methods = [
   {
     icon: HandHeart,
     title: "Y HỌC CỔ TRUYỀN",
-    subtitle: "(Khơi Thông & Thư Giãn)",
+    subtitle: <>(Khơi Thông <span className="font-['Times_New_Roman']">&amp;</span> Thư Giãn)</>,
     method: "Xoa bóp, bấm huyệt",
     benefits: [
       "Hỗ trợ kích hoạt và khơi thông các huyệt đạo, tăng cường lưu thông khí huyết.",
@@ -18,7 +18,7 @@ const methods = [
     icon: Zap,
     title: "CÔNG NGHỆ HIỆN ĐẠI",
     subtitle: "(Hỗ Trợ Giải Cơ Sâu)",
-    method: "Ứng dụng Thiết bị Năng lượng Sinh học & Kem đả thông kinh lạc cao cấp.",
+    method: <>Ứng dụng Thiết bị Năng lượng Sinh học <span className="font-['Times_New_Roman']">&amp;</span> Kem đả thông kinh lạc cao cấp.</>,
     benefits: [
       "Dòng năng lượng sinh học kết hợp dược liệu giúp tác động sâu vào vùng cơ bó tắc.",
       "Hỗ trợ xoa dịu nhanh chóng cảm giác căng mỏi cơ, ở cổ tay, khớp gối, gót chân.",
@@ -63,9 +63,9 @@ export default function Approach() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[clamp(13px,3.5vw,40px)] sm:text-[clamp(16px,2.8vw,40px)] md:text-[clamp(20px,2.5vw,40px)] lg:text-[40px] font-heading font-bold mb-6 pt-2 leading-[1.2] whitespace-nowrap tracking-tight sm:tracking-normal"
+            className="text-[clamp(13px,3.5vw,40px)] sm:text-[clamp(16px,2.8vw,40px)] md:text-[clamp(20px,2.5vw,40px)] lg:text-[40px] font-heading font-bold mb-6 pt-2 leading-[1.2] tracking-tight sm:tracking-normal"
           >
-            <span className="text-[#FF6B35]">KẾT HỢP TINH HOA</span> ĐÔNG Y, CÔNG NGHỆ & THỰC DƯỠNG
+            <span className="text-[#FF6B35]">KẾT HỢP TINH HOA</span> ĐÔNG Y, CÔNG NGHỆ <span className="font-['Times_New_Roman']">&amp;</span> THỰC DƯỠNG
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
@@ -137,7 +137,7 @@ export default function Approach() {
             href="https://zalo.me/0938614687" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl font-bold uppercase tracking-wider transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:shadow-[0_20px_40px_rgba(255,107,53,0.4)]"
+            className="inline-flex items-center justify-center gap-3 bg-[#FF6B35] hover:bg-[#e85d26] text-white w-full sm:w-auto px-4 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-2xl font-bold uppercase tracking-wider text-[13px] sm:text-base text-center transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(255,107,53,0.3)] hover:shadow-[0_20px_40px_rgba(255,107,53,0.4)]"
           >
             Nhận tư vấn cho VĐV Pickleball
           </a>
