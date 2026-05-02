@@ -115,7 +115,9 @@ function FeedbackCarousel() {
     "https://i.postimg.cc/LXSc8d0N/FB4.jpg",
     "https://i.postimg.cc/HWBqdh0c/FB5.jpg",
     "https://i.postimg.cc/9Fksqwnt/FB6.jpg",
-    "https://i.postimg.cc/5tdGsd1v/FB7.jpg"
+    "https://i.postimg.cc/5tdGsd1v/FB7.jpg",
+    "https://i.postimg.cc/gJHTkmrF/FB8.jpg",
+    "https://i.postimg.cc/wT70nhXc/FB9.jpg"
   ];
   
   // Clone 50 times to create a virtually infinite scrolling experience
@@ -128,7 +130,7 @@ function FeedbackCarousel() {
     // Start somewhere in the middle so user can scroll left or right immediately
     if (scrollRef.current) {
         // approximate width calculation to set to middle
-        const singleSetWidth = 7 * 280; // approx width + gap
+        const singleSetWidth = 9 * 280; // approx width + gap
         scrollRef.current.scrollLeft = singleSetWidth * 25;
     }
   }, []);
