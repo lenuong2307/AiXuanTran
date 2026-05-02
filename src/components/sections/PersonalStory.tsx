@@ -16,21 +16,40 @@ export default function PersonalStory() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex flex-col h-full lg:pt-[64px] lg:pb-[96px] relative"
+            className="flex flex-col h-full pb-12 lg:pt-[64px] lg:pb-[96px] relative"
           >
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-auto lg:flex-1 shadow-2xl border-4 border-white">
+            {/* Main Picture */}
+            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] lg:aspect-auto lg:flex-1 shadow-2xl border-4 border-white z-0 relative">
               <img 
-                src="https://i.postimg.cc/x1Ypc2fs/Chat-GPT-Image-01-32-10-2-thg-5-2026.png" 
+                src="https://i.postimg.cc/SxR4JCN2/Chat-GPT-Image-01-45-45-2-thg-5-2026.png" 
                 alt="Ái Xuân Trần" 
                 className="w-full h-full object-cover lg:absolute lg:inset-0 bg-cream"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent"></div>
-              
-              {/* Signature or Quote */}
-              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-xl w-64 sm:w-auto max-w-xs rotate-2 z-10">
-                <p className="font-script text-xl sm:text-2xl text-coral mb-1 sm:mb-2">"Sức khoẻ là tài sản quý giá nhất"</p>
-                <p className="text-sm text-text-body font-medium">- Ái Xuân Trần</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent pointer-events-none"></div>
+            </div>
+
+            {/* Small Polaroid Picture */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.05, rotate: -2, y: -5 }}
+              className="absolute bottom-16 -right-2 sm:bottom-24 sm:-right-4 lg:bottom-28 lg:-right-8 w-32 sm:w-40 lg:w-[190px] rounded-[1rem] lg:rounded-[1.2rem] border-[3px] border-white shadow-[0_15px_40px_rgba(0,0,0,0.2)] rotate-[4deg] lg:rotate-[5deg] z-20 cursor-pointer transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:scale-105 overflow-hidden"
+            >
+              <div className="aspect-[3/4] relative bg-cream">
+                <img 
+                  src="https://i.postimg.cc/m2dV2FnZ/z7117925463719-13eb48ffca865f94d7b1d596aa829469.jpg" 
+                  alt="Ảnh nhỏ Polaroid" 
+                  className="w-full h-full object-cover"
+                />
               </div>
+            </motion.div>
+            
+            {/* Signature or Quote */}
+            <div className="absolute bottom-12 lg:bottom-[96px] left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-4 sm:p-5 rounded-2xl shadow-xl w-64 sm:w-72 max-w-xs rotate-[-2deg] z-30 text-center">
+              <p className="font-script text-xl sm:text-2xl text-coral mb-1 sm:mb-2">"Sức khoẻ là tài sản quý giá nhất"</p>
+              <p className="text-sm text-text-body font-medium">- Ái Xuân Trần</p>
             </div>
           </motion.div>
 
