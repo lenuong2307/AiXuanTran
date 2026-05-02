@@ -20,9 +20,10 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black mb-6 uppercase tracking-wide leading-tight"
+          className="text-[clamp(1.1rem,4.5vw,2.25rem)] sm:text-4xl lg:text-5xl font-heading font-black mb-6 uppercase tracking-wide leading-tight"
         >
-          Đừng để chấn thương tước đi cơ hội cầm cúp của bạn!
+          <span className="whitespace-nowrap">Đừng để chấn thương tước đi</span><br />
+          <span className="whitespace-nowrap">cơ hội cầm cúp của bạn!</span>
         </motion.h2>
         
         <motion.p
@@ -32,7 +33,7 @@ export default function FinalCTA() {
           transition={{ delay: 0.1 }}
           className="text-white/90 text-lg lg:text-xl mb-10 max-w-2xl mx-auto font-medium"
         >
-          Liên hệ ngay với chuyên gia chăm sóc thể lực Pickleball Ái Xuân để lấy lại phong độ đỉnh cao.
+          Liên hệ ngay với "chuyên gia bắt chuột" Ái Xuân Trần để lấy lại phong độ đỉnh cao.
         </motion.p>
         
         <motion.div

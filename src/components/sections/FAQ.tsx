@@ -4,20 +4,52 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: "Phục hồi xong có được đánh trận tiếp không?",
-    answer: "Công nghệ và phương pháp giãn cơ của Ái Xuân giúp giải phóng cục máu đông, làm giãn bó cơ đang co rút lập tức. Phục hồi xong, VĐV hoàn toàn có thể vào sân đánh tiếp ngay với 100% thể lực mà không lo tái phát nếu giữ đúng nhịp độ."
+    question: "Phương pháp của Ái Xuân Trần có giống với đi massage/spa thông thường không?",
+    answer: (
+      <>
+        <strong className="text-[#2F5D50]">Hoàn toàn khác biệt.</strong> Massage thông thường chủ yếu làm thư giãn bề mặt da và cơ nhẹ. Phương pháp của Ái Xuân Trần là <strong className="text-[#2F5D50]">Phục hồi chuyên sâu</strong>, kết hợp <strong className="text-[#2F5D50]">bấm huyệt Đông y mở khóa điểm tắc nghẽn</strong> và dùng <strong className="text-[#2F5D50]">máy Năng lượng sinh học</strong> tác động thẳng vào vùng cơ đang bị bó. Nó mang tính <strong className="text-[#2F5D50]">giải quyết cơn đau và tối ưu hóa phong độ</strong>, chứ không chỉ là thư giãn đơn thuần.
+      </>
+    )
   },
   {
-    question: "Tôi là BTC giải, muốn thuê team Ái Xuân thì cần book trước bao lâu?",
-    answer: "Để đảm bảo sắp xếp nhân sự chuyên môn và thiết bị sinh học đầy đủ, BTC nên liên hệ đặt lịch trước ít nhất 1-2 tuần. Đối với các giải quy mô trên 200 VĐV, vui lòng báo trước 1 tháng để chuẩn bị chu đáo nhất."
+    question: "Nếu tôi đang bị đau nhức, liệu trình có gây đau đớn thêm không? Bao lâu thì tôi có thể ra sân trở lại?",
+    answer: (
+      <>
+        Liệu trình được tinh chỉnh lực tác động phù hợp với ngưỡng chịu đựng của từng người, kết hợp kem đả thông kinh lạc cao cấp giúp làm mềm cơ nhanh chóng nên sẽ <strong className="text-[#2F5D50]">mang lại cảm giác dễ chịu, giải tỏa ngay lập tức chứ không gây đau đớn</strong>. Phần lớn các VĐV đều cảm thấy <strong className="text-[#2F5D50]">cơ thể nhẹ bẫng</strong> và <strong className="text-[#2F5D50]">có thể trở lại sân đấu ngay sau ngày hôm sau</strong>.
+      </>
+    )
   },
   {
-    question: "Đau mỏi cổ vai gáy mãn tính có điều trị được không?",
-    answer: "Hoàn toàn được. Chúng tôi kết hợp nắn chỉnh, máy năng lượng sinh học và đông y để đi sâu giải quyết tận gốc các điểm tắc nghẽn, trả lại sự linh hoạt cho cơ khớp chứ không chỉ giảm đau tạm thời."
+    question: "Khi mời Ái Xuân đến giải đấu, Ban tổ chức có cần chuẩn bị không gian hay thiết bị gì phức tạp không?",
+    answer: (
+      <>
+        <strong className="text-[#2F5D50]">Hoàn toàn không.</strong> Dịch vụ của chúng tôi mang tính chất <strong className="text-[#2F5D50]">'Chìa khóa trao tay'</strong>. Ái Xuân Trần và đội ngũ sẽ <strong className="text-[#2F5D50]">tự chuẩn bị đầy đủ trang thiết bị</strong>, giường gập chuyên dụng, máy móc và nguyên liệu đi kèm. Ban tổ chức chỉ cần hỗ trợ một góc nhỏ tại khu vực sân và nguồn điện cơ bản. Mọi công tác hậu cần chúng tôi sẽ <strong className="text-[#2F5D50]">tự chủ động để không làm ảnh hưởng đến luồng vận hành của giải</strong>.
+      </>
+    )
   },
   {
-    question: "Mỗi buổi phục hồi kéo dài bao lâu?",
-    answer: "Tại giải đấu: Các ca xử lý cấp tốc chuột rút/căng cơ mất khoảng 10-15 phút. Tại cơ sở: Một buổi phục hồi chuyên sâu thường kéo dài từ 45 - 60 phút, bao gồm khám, nắn chỉnh và massage trị liệu."
+    question: "Sự có mặt của Ái Xuân Trần tại giải đấu mang lại giá trị thực tế gì ngoài việc xử lý chuột rút?",
+    answer: (
+      <>
+        Ngoài việc chăm sóc khẩn cấp giúp VĐV an tâm thi đấu, sự hiện diện của một đội ngũ chăm sóc phục hồi chuyên nghiệp là <strong className="text-[#2F5D50]">thước đo đẳng cấp của giải đấu</strong>. Nó giúp Ban tổ chức <strong className="text-[#2F5D50]">tạo ra điểm nhấn truyền thông khác biệt</strong>, <strong className="text-[#2F5D50]">ghi điểm tuyệt đối</strong> trong mắt các nhà tài trợ và khiến các VĐV <strong className="text-[#2F5D50]">muốn quay lại thi đấu ở những mùa giải sau</strong>.
+      </>
+    )
+  },
+  {
+    question: "Tôi chưa từng học qua ngành Y hay Đông y thì có thể tiếp thu và làm được mô hình này không?",
+    answer: (
+      <>
+        <strong className="text-[#2F5D50]">Chắc chắn làm được.</strong> Khóa chuyển giao của Ái Xuân không dạy lý thuyết hàn lâm dài dòng, mà <strong className="text-[#2F5D50]">tập trung vào Quy trình thực chiến</strong>. Bạn sẽ được <strong className="text-[#2F5D50]">cầm tay chỉ việc các kỹ thuật cốt lõi</strong>, cách sử dụng máy móc và công thức xử lý từng vấn đề đặc thù của môn Pickleball. Chỉ cần bạn đam mê và chăm chỉ, bạn <strong className="text-[#2F5D50]">hoàn toàn làm chủ được tay nghề trong thời gian ngắn</strong>.
+      </>
+    )
+  },
+  {
+    question: "Học xong tôi có được hướng dẫn cách làm sao để có khách hàng và tiếp cận các giải đấu không?",
+    answer: (
+      <>
+        <strong className="text-[#2F5D50]">Đây chính là giá trị lớn nhất của khóa chuyển giao.</strong> Ái Xuân Trần <strong className="text-[#2F5D50]">không chỉ chuyển giao nghề, mà chuyển giao cả Bí quyết Kinh doanh</strong>. Bạn sẽ được chia sẻ <strong className="text-[#2F5D50]">cách xây dựng thương hiệu cá nhân</strong>, <strong className="text-[#2F5D50]">cách tiếp cận các chủ sân Pickleball</strong> và <strong className="text-[#2F5D50]">cách để trở thành đơn vị đồng hành được các giải đấu săn đón</strong> – bài học được đúc kết từ chính sự thành công thực tế của Ái Xuân Trần.
+      </>
+    )
   }
 ];
 
