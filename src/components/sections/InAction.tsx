@@ -357,11 +357,11 @@ export default function InAction() {
           {/* Reel-style Video Library */}
           <div className="mt-24 pt-12 border-t border-white/10">
             <div className="text-center max-w-4xl mx-auto mb-10 px-4">
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-[#FF6B35] uppercase tracking-wide">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 text-[#FF6B35] uppercase tracking-wide leading-snug">
                 CHUYÊN MÔN ĐƯỢC CHỨNG MINH BẰNG NHỮNG KHOẢNH KHẮC THỰC TẾ
               </h3>
-              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto italic">
-                "Không lý thuyết. Không cam kết suông. Uy tín của Ái Xuân được xây dựng từ những giọt mồ hôi trên sân, những pha cứu nguy tức thì và nụ cười của các VĐV sau khi phục hồi 100% thể lực. Hãy vuốt để xem những khoảnh khắc thực chiến và lắng nghe chia sẻ từ chính những người trong cuộc."
+              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto italic mt-4 md:mt-6">
+                "Không lý thuyết. Không cam kết suông. Uy tín của Ái Xuân Trần được xây dựng từ những giọt mồ hôi trên sân, những pha cứu nguy tức thì và nụ cười của các VĐV sau khi phục hồi thể lực. Hãy vuốt để xem những khoảnh khắc thực chiến và lắng nghe chia sẻ từ chính những người trong cuộc."
               </p>
             </div>
             
@@ -395,10 +395,10 @@ export default function InAction() {
         <div className="pt-12 border-t border-white/10">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-4 text-white uppercase tracking-wide">
-              BỨC TƯỜNG DANH VỌNG
+              BẢO CHỨNG TỪ NHỮNG NGƯỜI TRONG CUỘC
             </h3>
             <p className="text-gray-300 text-lg leading-relaxed italic">
-              "Khách hàng nói gì về hiệu quả phục hồi tại Ái Xuân?"
+              "Các tay vợt Pickleball nói gì về hiệu quả phục hồi tại Ái Xuân Trần?"
             </p>
           </div>
 
