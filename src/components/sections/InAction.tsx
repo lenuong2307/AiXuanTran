@@ -37,9 +37,10 @@ const gallery = [
 const videoReels = [
   {
     id: 1,
-    title: "Cắt cơn chuột rút tại mép sân",
+    title: "Không khí tại giải thi đấu",
     poster: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80",
-    video: "https://videos.pexels.com/video-files/3196164/3196164-sd_640_360_25fps.mp4"
+    video: "https://drive.google.com/file/d/1zdBlElmw8bfdnlkx2-S33O1Et32a0oEw/preview",
+    isEmbed: true
   },
   {
     id: 2,
@@ -50,9 +51,10 @@ const videoReels = [
   },
   {
     id: 3,
-    title: "Không khí giải Dinknutrition",
+    title: "Cận cảnh VĐV được chăm sóc phục hồi",
     poster: "https://images.unsplash.com/photo-1622599511051-16fd808eec97?auto=format&fit=crop&q=80",
-    video: "https://videos.pexels.com/video-files/3182811/3182811-sd_640_360_25fps.mp4"
+    video: "https://drive.google.com/file/d/1unK4y77v8gB72HZPnISiBWrnLQ9bufLm/preview",
+    isEmbed: true
   },
   {
     id: 4,
