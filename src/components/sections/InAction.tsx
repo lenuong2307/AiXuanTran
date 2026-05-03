@@ -37,15 +37,16 @@ const gallery = [
 const videoReels = [
   {
     id: 1,
-    title: "VĐV vô địch nói gì?",
+    title: "Cắt cơn chuột rút tại mép sân",
     poster: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80",
-    video: "https://drive.google.com/uc?export=download&id=1iQx69KG4B9kJM9aduuuC2DuFsOUKUNai"
+    video: "https://videos.pexels.com/video-files/3196164/3196164-sd_640_360_25fps.mp4"
   },
   {
     id: 2,
-    title: "VĐV vô địch nói gì?",
+    title: "Feedback của vận động viên",
     poster: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80",
-    video: "https://videos.pexels.com/video-files/3652803/3652803-sd_640_360_25fps.mp4"
+    video: "https://drive.google.com/file/d/1iQx69KG4B9kJM9aduuuC2DuFsOUKUNai/preview",
+    isEmbed: true
   },
   {
     id: 3,
@@ -67,24 +68,37 @@ function ReelCard({ item }: { item: any }) {
 
   const handlePlay = () => {
     setPlaying(true);
-    if (videoRef.current) {
+    if (!item.isEmbed && videoRef.current) {
       videoRef.current.play();
     }
   };
 
   return (
     <div className="w-[280px] sm:w-[320px] aspect-[9/16] shrink-0 snap-center relative rounded-[2rem] overflow-hidden bg-black shadow-xl border border-white/10 group cursor-pointer" onClick={!playing ? handlePlay : undefined}>
-      <video
-        ref={videoRef}
-        controls={playing}
-        playsInline
-        className="w-full h-full object-cover"
-        poster={item.poster}
-        onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
-      >
-        <source src={item.video} type="video/mp4" />
-      </video>
+      {item.isEmbed ? (
+        playing ? (
+          <iframe
+            src={item.video}
+            className="w-full h-full border-0 absolute inset-0 z-0 bg-transparent"
+            allow="autoplay"
+            allowFullScreen
+          />
+        ) : (
+          <img src={item.poster} className="w-full h-full object-cover" alt={item.title} />
+        )
+      ) : (
+        <video
+          ref={videoRef}
+          controls={playing}
+          playsInline
+          className="w-full h-full object-cover"
+          poster={item.poster}
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
+        >
+          <source src={item.video} type="video/mp4" />
+        </video>
+      )}
       
       {!playing && (
         <div className="absolute inset-0 z-10 flex flex-col justify-between p-6 bg-gradient-to-t from-[#2F5D50] via-transparent to-[#2F5D50]/80 transition-colors">
