@@ -69,11 +69,16 @@ const ReelCard: React.FC<{ item: any, onPlayingChange?: (playing: boolean) => vo
   const [playing, setPlaying] = React.useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
+  const onPlayingChangeRef = React.useRef(onPlayingChange);
   React.useEffect(() => {
-    if (onPlayingChange) {
-      onPlayingChange(playing);
+    onPlayingChangeRef.current = onPlayingChange;
+  }, [onPlayingChange]);
+
+  React.useEffect(() => {
+    if (onPlayingChangeRef.current) {
+      onPlayingChangeRef.current(playing);
     }
-  }, [playing, onPlayingChange]);
+  }, [playing]);
 
   const handlePlay = () => {
     setPlaying(true);
@@ -607,7 +612,7 @@ export default function InAction() {
           <div className="mt-24 pt-12 border-t border-white/10">
             <div className="text-center max-w-4xl mx-auto mb-10 px-4">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 text-[#FF6B35] uppercase tracking-wide leading-snug">
-                KHÔNG GIAN TRỊ LIỆU TĨNH TẠI <span style={{ fontFamily: '"Times New Roman", Times, serif' }}>&</span> THỰC CHIẾN SÂN ĐẤU MÁU LỬA
+                KHÔNG GIAN CƠ SỞ TĨNH TẠI <span style={{ fontFamily: '"Times New Roman", Times, serif' }}>&</span> THỰC CHIẾN SÂN ĐẤU MÁU LỬA
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto italic mt-4 md:mt-6">
                 "Từ cơ sở khang trang với máy móc hiện đại đến những pha 'bắt chuột' tốc độ bên mép sân Pickleball. Mọi không gian đều được Ái Xuân Trần chuẩn bị với sự chuyên nghiệp, tận tâm."

@@ -71,15 +71,15 @@ export default function Services() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700">Ứng dụng liệu trình 3 Tác động (Đông y - Công nghệ - Thực dưỡng) thiết kế riêng theo thể trạng từng người.</span>
+                    <span className="text-sm text-gray-700 text-justify sm:text-left">Ứng dụng liệu trình 3 Tác động (Đông y - Công nghệ - Thực dưỡng) thiết kế riêng theo thể trạng từng người.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700">"Cắt" đứt sự mệt mỏi, giải phóng cơ bắp</span>
+                    <span className="text-sm text-gray-700 text-justify sm:text-left">"Cắt" đứt sự mệt mỏi, giải phóng cơ bắp</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#FF6B35] shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700">Rút ngắn <strong className="text-[#2F5D50]">50%</strong> thời gian nghỉ dưỡng, đưa bạn trở lại sân tập với trạng thái cơ thể nhẹ bẫng và linh hoạt nhất.</span>
+                    <span className="text-sm text-gray-700 text-justify sm:text-left">Rút ngắn <strong className="text-[#2F5D50]">50%</strong> thời gian nghỉ dưỡng, đưa bạn trở lại sân tập với trạng thái cơ thể nhẹ bẫng và linh hoạt nhất.</span>
                   </li>
                 </ul>
               </div>
@@ -133,15 +133,15 @@ export default function Services() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#2F5D50] shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700">Trực tiếp sơ cứu, xử lý chuột rút, lật cổ chân, căng cơ cấp tốc tại sân cho VĐV.</span>
+                    <span className="text-sm text-gray-700 text-justify sm:text-left">Trực tiếp sơ cứu, xử lý chuột rút, lật cổ chân, căng cơ cấp tốc tại sân cho VĐV.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#2F5D50] shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700">Thiết lập trạm phục hồi năng lượng ngay tại giải đấu (kết hợp máy móc và xoa bóp giãn cơ ngắn).</span>
+                    <span className="text-sm text-gray-700 text-justify sm:text-left">Thiết lập trạm phục hồi năng lượng ngay tại giải đấu (kết hợp máy móc và xoa bóp giãn cơ ngắn).</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-[#2F5D50] shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-700"><strong className="text-[#FF6B35]">Giá trị cộng thêm:</strong> Bảo chứng uy tín, tạo trải nghiệm WOW cho người tham gia và nâng tầm sự chuyên nghiệp cho toàn bộ giải đấu của bạn.</span>
+                    <span className="text-sm text-gray-700 text-justify sm:text-left"><strong className="text-[#FF6B35]">Giá trị cộng thêm:</strong> Bảo chứng uy tín, tạo trải nghiệm WOW cho người tham gia và nâng tầm sự chuyên nghiệp cho toàn bộ giải đấu của bạn.</span>
                   </li>
                 </ul>
               </div>
@@ -191,15 +191,15 @@ export default function Services() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-200"><strong className="text-white">Nắm giữ bí quyết:</strong> Chuyển giao toàn bộ kỹ thuật xoa bóp bấm huyệt và vận hành thiết bị năng lượng sinh học chuyên biệt cho chấn thương Pickleball.</span>
+                    <span className="text-sm text-gray-200 text-justify sm:text-left"><strong className="text-white">Nắm giữ bí quyết:</strong> Chuyển giao toàn bộ kỹ thuật xoa bóp bấm huyệt và vận hành thiết bị năng lượng sinh học chuyên biệt cho chấn thương Pickleball.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-200"><strong className="text-white">Quy trình chuẩn:</strong> Công thức phục hồi đã được kiểm chứng trên hàng trăm VĐV và các nhà vô địch.</span>
+                    <span className="text-sm text-gray-200 text-justify sm:text-left"><strong className="text-white">Quy trình chuẩn:</strong> Công thức phục hồi đã được kiểm chứng trên hàng trăm VĐV và các nhà vô địch.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                    <span className="text-sm text-gray-200"><strong className="text-white">Đồng hành kinh doanh:</strong> Hỗ trợ tư vấn setup mô hình, cách xây dựng thương hiệu cá nhân để thu hút cả khách lẻ lẫn các giải đấu lớn. (Được học từ chính kinh nghiệm thực chiến của Ái Xuân Trần).</span>
+                    <span className="text-sm text-gray-200 text-justify sm:text-left"><strong className="text-white">Đồng hành kinh doanh:</strong> Hỗ trợ tư vấn setup mô hình, cách xây dựng thương hiệu cá nhân để thu hút cả khách lẻ lẫn các giải đấu lớn. (Được học từ chính kinh nghiệm thực chiến của Ái Xuân Trần).</span>
                   </li>
                 </ul>
               </div>

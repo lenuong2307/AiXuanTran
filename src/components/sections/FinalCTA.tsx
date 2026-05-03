@@ -19,7 +19,7 @@ export default function FinalCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[clamp(1.1rem,4.5vw,2.25rem)] sm:text-4xl lg:text-5xl font-heading font-black mb-6 uppercase tracking-wide leading-tight"
+          className="text-[clamp(1.1rem,4.5vw,2.25rem)] sm:text-4xl lg:text-5xl font-heading font-black mb-6 uppercase tracking-wide leading-relaxed sm:leading-[1.4]"
         >
           <span className="whitespace-nowrap">Đừng để chấn thương tước đi</span><br />
           <span className="whitespace-nowrap">cơ hội cầm cúp của bạn!</span>
