@@ -91,9 +91,10 @@ const ReelCard: React.FC<{ item: any, onPlayingChange?: (playing: boolean) => vo
             className="w-full h-full border-0 absolute inset-0 z-0 bg-transparent"
             allow="autoplay"
             allowFullScreen
+            loading="lazy"
           />
         ) : (
-          <img src={item.poster} className="w-full h-full object-cover" alt={item.title} />
+          <img src={item.poster} className="w-full h-full object-cover" alt={item.title} loading="lazy" />
         )
       ) : (
         <video
@@ -218,18 +219,41 @@ function FeedbackCarousel() {
 function VideoReelsCarousel() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = React.useState(false);
-  const [activeVideos, setActiveVideos] = React.useState<Set<number>>(new Set());
+  const [activeVideos, setActiveVideos] = React.useState<Set<string>>(new Set());
   const scrollDirectionRef = React.useRef<'left' | 'right'>('right');
+  
+  // Clone the reels 8 times to create an infinite circle scrolling experience
+  const clonedReels = React.useMemo(() => Array(8).fill(videoReels).flat().map((item, i) => ({...item, uniqueKey: `${item.id}-${i}`})), []);
 
   const isAutoPlaying = !isHovered && activeVideos.size === 0;
 
-  const handleVideoPlaying = React.useCallback((id: number, playing: boolean) => {
+  const handleVideoPlaying = React.useCallback((uniqueKey: string, playing: boolean) => {
     setActiveVideos(prev => {
       const next = new Set(prev);
-      if (playing) next.add(id);
-      else next.delete(id);
+      if (playing) next.add(uniqueKey);
+      else next.delete(uniqueKey);
       return next;
     });
+  }, []);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+       const el = scrollRef.current;
+       const itemElement = el.children[1] as HTMLElement;
+       const itemWidth = itemElement?.clientWidth || 280;
+       const gap = 32;
+       const scrollAmount = direction === 'left' ? -(itemWidth + gap) : (itemWidth + gap);
+       el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+       scrollDirectionRef.current = direction;
+    }
+  };
+
+  React.useEffect(() => {
+    // Start somewhere in the middle so user can scroll left or right immediately
+    if (scrollRef.current) {
+        const singleSetWidth = videoReels.length * (280 + 32);
+        scrollRef.current.scrollLeft = singleSetWidth * 3;
+    }
   }, []);
 
   React.useEffect(() => {
@@ -278,24 +302,38 @@ function VideoReelsCarousel() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="w-full relative px-2 sm:px-0"
+      className="w-full max-w-[1400px] relative px-10 sm:px-16 mx-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(true)}
     >
+      <button 
+        onClick={() => handleScroll('left')}
+        className="absolute left-0 lg:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-[#FF6B35] group p-3 sm:p-4 rounded-full backdrop-blur-sm transition-all border border-white/20 text-white shadow-xl hover:scale-110"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-0.5 transition-transform"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
       <div 
         ref={scrollRef}
         className="flex overflow-x-auto gap-4 sm:gap-8 pb-4 pt-4 sm:px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
-        <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
+        <div className="hidden sm:block shrink-0 w-[1vw] xl:w-[5vw]"></div>
         
-         {videoReels.map((item) => (
-           <ReelCard key={item.id} item={item} onPlayingChange={(playing) => handleVideoPlaying(item.id, playing)} />
+         {clonedReels.map((item) => (
+           <ReelCard key={item.uniqueKey} item={item} onPlayingChange={(playing) => handleVideoPlaying(item.uniqueKey, playing)} />
          ))}
          
-         <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
+         <div className="hidden sm:block shrink-0 w-[1vw] xl:w-[5vw]"></div>
       </div>
       
+      <button 
+        onClick={() => handleScroll('right')}
+        className="absolute right-0 lg:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-[#FF6B35] group p-3 sm:p-4 rounded-full backdrop-blur-sm transition-all border border-white/20 text-white shadow-xl hover:scale-110"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
       <div className="flex justify-center items-center text-gray-400 text-sm gap-2 animate-pulse mt-4 mb-4">
          <span className="uppercase tracking-widest font-bold text-white/50">← Vuốt ngang để xem thêm →</span>
       </div>
