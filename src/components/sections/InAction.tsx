@@ -37,9 +37,9 @@ const gallery = [
 const videoReels = [
   {
     id: 1,
-    title: "Cắt cơn chuột rút tại mép sân",
+    title: "VĐV vô địch nói gì?",
     poster: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80",
-    video: "https://videos.pexels.com/video-files/3196164/3196164-sd_640_360_25fps.mp4"
+    video: "https://drive.google.com/uc?export=download&id=1iQx69KG4B9kJM9aduuuC2DuFsOUKUNai"
   },
   {
     id: 2,
