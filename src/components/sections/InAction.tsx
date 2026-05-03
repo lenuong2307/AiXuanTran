@@ -38,35 +38,42 @@ const videoReels = [
   {
     id: 1,
     title: "Không khí tại giải thi đấu",
-    poster: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80",
-    video: "https://drive.google.com/file/d/1zdBlElmw8bfdnlkx2-S33O1Et32a0oEw/preview",
+    poster: "https://i.postimg.cc/CLS2Htnh/0503-(4)-Cover.jpg",
+    video: "https://drive.google.com/file/d/1qyNXH3eJkPIqhnMs2cgm4KyalL_N6fTa/preview",
     isEmbed: true
   },
   {
     id: 2,
-    title: "Feedback của vận động viên",
-    poster: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80",
-    video: "https://drive.google.com/file/d/1iQx69KG4B9kJM9aduuuC2DuFsOUKUNai/preview",
+    title: "VĐV vô địch nói gì?",
+    poster: "https://i.postimg.cc/fT887bhf/0503-666-Cover.jpg",
+    video: "https://drive.google.com/file/d/18lIDeYb4EQ-e1WcVGoWyOMjMXr0U0nQ2/preview",
     isEmbed: true
   },
   {
     id: 3,
-    title: "Cận cảnh VĐV được chăm sóc phục hồi",
-    poster: "https://images.unsplash.com/photo-1622599511051-16fd808eec97?auto=format&fit=crop&q=80",
-    video: "https://drive.google.com/file/d/1unK4y77v8gB72HZPnISiBWrnLQ9bufLm/preview",
+    title: "VĐV vô địch nói gì khi bị chuột rút?",
+    poster: "https://i.postimg.cc/qBLw07gV/0503-(2)-Cover.jpg",
+    video: "https://drive.google.com/file/d/1NYBGNmvogBRdxwqd-xNm-pgn-hOlzhm4/preview",
     isEmbed: true
   },
   {
     id: 4,
-    title: "Chuyên sâu phục hồi tĩnh lặng",
-    poster: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80",
-    video: "https://videos.pexels.com/video-files/4055490/4055490-sd_640_360_25fps.mp4"
+    title: "Cận cảnh VĐV được chăm sóc tại sân",
+    poster: "https://i.postimg.cc/FHJ0fFFh/0503-(4)(1)-Cover.jpg",
+    video: "https://drive.google.com/file/d/1h2iYN8CxYHaPPQBW0cKCA6WI0NNz95G3/preview",
+    isEmbed: true
   }
 ];
 
-function ReelCard({ item }: { item: any }) {
+const ReelCard: React.FC<{ item: any, onPlayingChange?: (playing: boolean) => void }> = ({ item, onPlayingChange }) => {
   const [playing, setPlaying] = React.useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (onPlayingChange) {
+      onPlayingChange(playing);
+    }
+  }, [playing, onPlayingChange]);
 
   const handlePlay = () => {
     setPlaying(true);
@@ -205,6 +212,94 @@ function FeedbackCarousel() {
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
       </button>
     </div>
+  );
+}
+
+function VideoReelsCarousel() {
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [activeVideos, setActiveVideos] = React.useState<Set<number>>(new Set());
+  const scrollDirectionRef = React.useRef<'left' | 'right'>('right');
+
+  const isAutoPlaying = !isHovered && activeVideos.size === 0;
+
+  const handleVideoPlaying = React.useCallback((id: number, playing: boolean) => {
+    setActiveVideos(prev => {
+      const next = new Set(prev);
+      if (playing) next.add(id);
+      else next.delete(id);
+      return next;
+    });
+  }, []);
+
+  React.useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const el = scrollRef.current;
+        // Check actual scroll position vs max scroll to determine bounce
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        
+        let shouldScrollLeft = false;
+        let shouldScrollRight = false;
+        
+        if (scrollDirectionRef.current === 'right') {
+          if (el.scrollLeft >= maxScroll - 10) {
+            scrollDirectionRef.current = 'left';
+            shouldScrollLeft = true;
+          } else {
+            shouldScrollRight = true;
+          }
+        } else {
+          if (el.scrollLeft <= 10) {
+            scrollDirectionRef.current = 'right';
+            shouldScrollRight = true;
+          } else {
+            shouldScrollLeft = true;
+          }
+        }
+
+        // Get an approximate width to scroll
+        const itemElement = el.children[1] as HTMLElement;
+        const itemWidth = itemElement?.clientWidth || 280;
+        const gap = 32;
+        const scrollAmount = shouldScrollRight ? (itemWidth + gap) : -(itemWidth + gap);
+
+        el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, 2500);
+    
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="w-full relative px-2 sm:px-0"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+    >
+      <div 
+        ref={scrollRef}
+        className="flex overflow-x-auto gap-4 sm:gap-8 pb-4 pt-4 sm:px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+      >
+        <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
+        
+         {videoReels.map((item) => (
+           <ReelCard key={item.id} item={item} onPlayingChange={(playing) => handleVideoPlaying(item.id, playing)} />
+         ))}
+         
+         <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
+      </div>
+      
+      <div className="flex justify-center items-center text-gray-400 text-sm gap-2 animate-pulse mt-4 mb-4">
+         <span className="uppercase tracking-widest font-bold text-white/50">← Vuốt ngang để xem thêm →</span>
+      </div>
+    </motion.div>
   );
 }
 
@@ -467,29 +562,7 @@ export default function InAction() {
               </p>
             </div>
             
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="w-full relative px-2 sm:px-0"
-            >
-              <div className="flex overflow-x-auto gap-4 sm:gap-8 pb-4 pt-4 sm:px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                {/* Spacer block for sm screens to ensure content starts with some margin */}
-                <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
-                
-                 {videoReels.map((item) => (
-                   <ReelCard key={item.id} item={item} />
-                 ))}
-                 
-                 {/* Spacer block for sm screens to ensure content ends with some margin */}
-                 <div className="hidden sm:block shrink-0 w-[5vw] xl:w-[10vw]"></div>
-              </div>
-              
-              {/* Swipe Indicator */}
-              <div className="flex justify-center items-center text-gray-400 text-sm gap-2 animate-pulse mt-4 mb-4">
-                 <span className="uppercase tracking-widest font-bold text-white/50">← Vuốt ngang để xem thêm →</span>
-              </div>
-            </motion.div>
+            <VideoReelsCarousel />
           </div>
 
           {/* Photo Grid / Gallery */}
