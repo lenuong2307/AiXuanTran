@@ -51,9 +51,9 @@ export default function Navbar() {
               className="flex items-center gap-1.5 px-5 py-2.5 rounded-full text-white text-sm font-bold tracking-wide transition-all border border-transparent hover:bg-white/10"
             >
               <motion.div animate={{ rotate: [0, -10, 10, -10, 10, 0], scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 1.5, repeatDelay: 1 }}>
-                <Phone className="w-4 h-4 text-coral" />
+                <Phone className="w-4 h-4 text-[#FF6B35]" />
               </motion.div>
-              <span className="text-coral">0938614687</span>
+              <span className="text-[#FF6B35]">0938614687</span>
             </motion.a>
           </nav>
 
@@ -91,7 +91,7 @@ export default function Navbar() {
                 href="tel:0938614687"
                 animate={{ opacity: [1, 0.6, 1] }}
                 transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                className="mt-4 px-5 py-3 flex justify-center items-center gap-2 rounded-lg text-coral font-bold tracking-wide border border-white/10 hover:bg-white/5 shadow-sm bg-coral/10"
+                className="mt-4 px-5 py-3 flex justify-center items-center gap-2 rounded-lg text-[#FF6B35] font-bold tracking-wide border border-white/10 hover:bg-white/5 shadow-sm bg-[#FF6B35]/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <div className="animate-pulse">

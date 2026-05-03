@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Phone, Stethoscope, Activity } from 'lucide-react';
+import { ArrowRight, Phone, Stethoscope, Trophy } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -90,14 +90,17 @@ export default function Hero() {
               <div className="absolute inset-x-3 inset-y-3 sm:inset-x-5 sm:inset-y-5 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(95,127,107,0.4)_100%)] pointer-events-none rounded-2xl"></div>
               <div className="absolute inset-x-3 inset-y-3 sm:inset-x-5 sm:inset-y-5 bg-gradient-to-t from-forest/80 via-transparent to-transparent pointer-events-none rounded-2xl"></div>
               
-              <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 z-10">
-                <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-4 flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white flex justify-center items-center shrink-0" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}>
-                    <Activity className="w-6 h-6 text-sage" />
+              <div className="absolute bottom-3 sm:bottom-6 lg:bottom-6 xl:bottom-8 left-3 sm:left-6 lg:left-4 xl:left-8 right-3 sm:right-6 lg:right-4 xl:right-8 z-10">
+                <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-3 xl:p-4 flex items-center gap-2 sm:gap-3 lg:gap-2 xl:gap-3">
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-6 lg:h-6 xl:w-8 xl:h-8 bg-white flex justify-center items-center shrink-0" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}>
+                    <Trophy className="w-4 h-4 lg:w-3 lg:h-3 text-sage" />
                   </div>
-                  <div>
-                    <p className="text-white font-medium text-sm">Hết căng cơ sau 1 liệu trình</p>
-                    <p className="text-white/80 text-xs">Trở lại sân đấu với thể trạng 100%</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white font-bold text-xs lg:text-sm tracking-wide mb-0.5">Lý Hoàng Nam</p>
+                    <div className="text-white/95 text-[9px] sm:text-[10px] lg:text-[10px] xl:text-[11px] font-medium leading-[1.3] sm:leading-[1.4] flex flex-col gap-0.5 lg:whitespace-nowrap overflow-hidden">
+                      <p className="break-words line-clamp-2 lg:line-clamp-none">- VĐV Việt Nam đầu tiên VÔ ĐỊCH giải đấu Pickleball chuyên nghiệp PPA</p>
+                      <p className="break-words line-clamp-2 lg:line-clamp-none">- Tay vợt nam xuất sắc nhất năm 2025 tại Gala Vietnam Pickleball Awards</p>
+                    </div>
                   </div>
                 </div>
               </div>
